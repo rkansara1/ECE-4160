@@ -1,4 +1,4 @@
 ---
-title: Welcome to my Lab Notebook
+title: Welcome to my blog
 ---
 

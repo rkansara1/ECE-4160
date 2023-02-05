@@ -1,9 +1,10 @@
 ---
-title: About Me
+title: Labs
 ---
 
 Lab 1: Artemis: 
 
+# About Me
 ## Rishi Kansara, rkk58
 
 

@@ -2,7 +2,7 @@
 title: Labs
 ---
 
-[Lab 1: Artemis:]({% https://rkansara1.github.io/ECE-4160/Labs/Lab_1/writeup.html writeup %})
+[Lab 1: Artemis:] (/labs/lab1/writeup.md)
 
 <!-- # About Me
 ## Rishi Kansara, rkk58

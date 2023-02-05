@@ -2,7 +2,7 @@
 title: Labs
 ---
 
-[Lab 1: Artemis] (/labs/lab1/writeup.md)
+[Lab 1: Artemis] (/labs/lab1/writeup)
 
 <!-- # About Me
 ## Rishi Kansara, rkk58

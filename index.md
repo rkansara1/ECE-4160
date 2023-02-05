@@ -2,7 +2,7 @@
 title: Labs
 ---
 
-[Lab 1: Artemis:] (/labs/lab1/writeup.md)
+[Lab 1: Artemis] (/labs/lab1/writeup.md)
 
 <!-- # About Me
 ## Rishi Kansara, rkk58
@@ -12,3 +12,5 @@ title: Labs
 
 I am a senior studying Mechanical Engineering at Cornell University. I hope to learn more about autonomous robots in this class!
  -->
+
+[About me](/about)

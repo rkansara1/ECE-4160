@@ -13,4 +13,4 @@ title: Labs
 I am a senior studying Mechanical Engineering at Cornell University. I hope to learn more about autonomous robots in this class!
  -->
 
-[About me](/about)
+[About me](/ECE-4160/about)

@@ -12,3 +12,6 @@ This example was very straightforward to setup. All that needs to be done is to 
 
 ![Video](https://user-images.githubusercontent.com/123790450/216876429-c1f520b4-aeba-459b-be28-132f4c248500.mp4)
 
+<video src="https://user-images.githubusercontent.com/123790450/216876429-c1f520b4-aeba-459b-be28-132f4c248500.mp4" controls="controls" style="max-width: 730px;">
+</video>
+

@@ -21,9 +21,9 @@ The next example can be found under Files>Examples>Apollo3>Example04_Serial. In 
 
 
 
-### Example 3: 
+### Example 3: Analog Read
 
-This example can be found under Files>Examples>Apollo3>Example02_AnalogRead. In this example the artemis will read the internal die temperature. I modified the example code in order to get the program to print out the internal temperature in Fahrenheit as well as display the temperature on the serial plotter. Here are the code modifications:
+This example can be found under Files>Examples>Apollo3>Example02_AnalogRead. In this example the artemis will read the internal die temperature. In the below video you can observe how the die temperature started around 79.5°F. I placed my finger on the outside of the chip and it increased steadily to around 84°F. When I stopped pressing it the temperature then drops back down to about 79.5°F. I modified the example code in order to get the program to print out the internal temperature in Fahrenheit as well as display the temperature on the serial plotter. Here are the code modifications:
 
 ```c
 void loop() {
@@ -48,11 +48,16 @@ void loop() {
   delay(250);
 }
 ```
-
-
-
-https://user-images.githubusercontent.com/123790450/216880467-aa27edad-ca0b-442a-8de2-fe06849ff66c.mp4
-
 <video src="https://user-images.githubusercontent.com/123790450/216880467-aa27edad-ca0b-442a-8de2-fe06849ff66c.mp4" controls="controls" style="max-width: 730px;">
 </video>
+
+### Example 4: Microphone Output
+
+This example is found under Files>Examples>PDM>Example1_MicrophoneOutput. I uploaded the provided sketch to the Arduino. I attempted whistling and it brought the loudest frequency value from the 18000s to the 2000s. This can be observed in the below video. The loudest frequency is likely so low because the fans of my laptop are the only ambient noise.
+
+
+
+<video src="https://user-images.githubusercontent.com/123790450/216882377-1052b358-2988-4db1-8d40-455185568920.mp4" controls="controls" style="max-width: 730px;">
+</video>
+
 

@@ -1,5 +1,5 @@
 ---
-title: Lab 1:The Artemis Board
+title: "Lab 1: The Artemis Board"
 ---
 
 ## Objective

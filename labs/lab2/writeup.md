@@ -101,10 +101,41 @@ is called. This starts the notification process. Now if `ble.send_command(CMD.GE
 
 ![image](https://user-images.githubusercontent.com/123790450/218947615-dbf7201f-5b78-4ddf-b61f-662bfeb86eb0.png)
 
-
-
-
 ### Get Temperature Command
+
+Next, the `GET_TEMP_5s` and `GET_TEMP_5s_RAPID` commands were created. A similar process was followed as with adding the `GET_TIME_MILLIS` command in adding the right enums and modifying the switch statement. To print out the temperature a built in function called `getTempDegC()` was used to return the die temperature in Celsius. To have the Artemis print out the temperature every second for five seconds a for loop was used that appended the timestamped temperature to the output string, waited 1 second and then repeated. Below is the code and the output.
+
+Arduino Code:
+```c++
+case GET_TEMP_5s:
+      {
+        //make this into a string
+        tx_estring_value.clear();
+        for (int i = 0; i < 5; i++) {
+          int time_millis = millis();
+          float temp = getTempDegC();
+          tx_estring_value.append("T:");
+          tx_estring_value.append(time_millis);
+          tx_estring_value.append("|");
+          tx_estring_value.append("C:");
+          tx_estring_value.append(temp);
+          tx_estring_value.append("|");
+          delay(1000);
+        }
+        tx_characteristic_string.writeValue(tx_estring_value.c_str());
+        break;
+      }
+```
+Python Code:
+```
+ble.send_command(CMD.GET_TEMP_5s,"")
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/123790450/218948668-ca268fa1-d343-4399-8f14-afb4580cff70.png)
+
+
+
 
 ### Limitations
 

@@ -26,15 +26,27 @@ Bluetooth LE works with the Artemis being the peripheral device and the laptop a
 ### Configurations
 Here are the necessary configurations which needed to be made:
 Updating the `connections.yaml` file with the Artemis's MAC Address as well as changing the `ble_service` UUID with a newly generated one.
+
 ![image](https://user-images.githubusercontent.com/123790450/218940423-10ee21c8-04ae-4600-a2b1-5cb922eddbf5.png)
 
 Updating the `ble_arduino.ino` file with same ble_service UUID
+
 ![image](https://user-images.githubusercontent.com/123790450/218940691-e28c5ad3-8d8d-4ff5-85f1-8a25528a56db.png)
 
 ### demo.ipynb
 Prior to adding the notificaiton handler the `demo.ipynb` file contained a few given functions such as `PING` and `SEND_TWO_INTS`. Before carrying out all lab tasks here is what the Jupyter Notebook and Arduino Serial Monitor display. (`ble.disconnect` was ran in a lower cell but not inlcuded in the screenshot)
 
 ![image](https://user-images.githubusercontent.com/123790450/218941576-9f667fa8-684c-4d6e-a340-4b7508caff24.png)
+
 ![image](https://user-images.githubusercontent.com/123790450/218941636-b0fbe44c-742d-40d4-acd7-381213b1dd1d.png)
 
+### Send Echo Command
+
+### Get Time Command
+
+### Notification Handler
+
+### Get Temperature Command
+
+### Limitations
 

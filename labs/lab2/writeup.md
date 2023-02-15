@@ -65,14 +65,14 @@ Output:
 
 Python Code:
 
-```
+```python
 ble.send_command(CMD.GET_TIME_MILLIS,"")
 time_millis = ble.receive_string(ble.uuid['RX_STRING'])
 LOG.info(time_millis)
 ```
 Arduino Code:
 
-```
+```c++
 case GET_TIME_MILLIS:
       {
         int time_millis = millis();
@@ -82,8 +82,7 @@ case GET_TIME_MILLIS:
         tx_characteristic_string.writeValue(tx_estring_value.c_str());
         break;
       }
-      ```
-
+```
 
 ### Notification Handler
 

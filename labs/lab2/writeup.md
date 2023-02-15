@@ -14,4 +14,7 @@ To initially connect to the Artemis I first had it print out its MAC adress. Thi
 ![image](https://user-images.githubusercontent.com/123790450/218936223-58eb0ee1-40bf-448c-a938-64925845a9c7.png)
 
 ## How the codebase and bluetooth work
-The provided codebase provides a few helpful functions. The Jupyter Notebook has a BLEService which provides functions for connecting the notebook to the Artemis. The function `ble.connect()`
+The provided codebase provides a few helpful functions. The Jupyter Notebook has a BLEService which provides functions for connecting the notebook to the Artemis. The function `ble.connect()` allows the notebook to connect to the Artemis. Here is what that looks like:
+
+![image](https://user-images.githubusercontent.com/123790450/218937721-ca65f610-3b91-4eaf-8e0f-34b0a2916a9f.png)
+![image](https://user-images.githubusercontent.com/123790450/218937771-e4c33b48-0364-43ed-ac14-72c17414c6fe.png)

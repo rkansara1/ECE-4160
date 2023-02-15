@@ -64,12 +64,14 @@ Output:
 ![image](https://user-images.githubusercontent.com/123790450/218945664-1c9f9880-930b-43ab-9f11-9f9abb95bfc9.png)
 
 Python Code:
+
 ```
 ble.send_command(CMD.GET_TIME_MILLIS,"")
 time_millis = ble.receive_string(ble.uuid['RX_STRING'])
 LOG.info(time_millis)
 ```
 Arduino Code:
+
 ```
 case GET_TIME_MILLIS:
       {

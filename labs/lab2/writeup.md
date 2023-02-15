@@ -134,6 +134,41 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/123790450/218948668-ca268fa1-d343-4399-8f14-afb4580cff70.png)
 
+Next to implement `GET_TEMP_5s_RAPID`, I created a while loop that just checked if the current time - start time was less than 5000 ms. If it wasn't the program sent out the timestamped die temperature.
+
+Arduino Code:
+```c++
+ case GET_TEMP_5s_RAPID:
+      {
+        int initial_t = millis();
+        tx_estring_value.clear();
+        int time_now = initial_t;
+        while ((time_now - initial_t) < 5000) {
+          tx_estring_value.clear();
+          float temp = getTempDegC();
+          tx_estring_value.append("T:");
+          tx_estring_value.append((int)millis());
+          tx_estring_value.append("|");
+          tx_estring_value.append("C:");
+          tx_estring_value.append(temp);
+          tx_estring_value.append("|");
+          tx_characteristic_string.writeValue(tx_estring_value.c_str());
+          time_now = millis();
+        }
+        break;
+      }
+```
+
+Python Code:
+
+```python
+ble.send_command(CMD.GET_TEMP_5s_RAPID,"")
+```
+
+Output: (The image is small so it will help to open it a new tab)
+
+![image](https://user-images.githubusercontent.com/123790450/218949873-468f5669-73ad-4996-b850-8a056f772b9b.png)
+
 
 
 

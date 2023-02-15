@@ -86,6 +86,14 @@ case GET_TIME_MILLIS:
 
 ### Notification Handler
 
+The notification handler takes advantage of the notify feature of the Bluetooth Low Energy specification. To enable it a callback function needs to be created. Here is the created callback function: 
+
+```python
+async def string_notification(uuid, bytearray):
+    s = ble.bytearray_to_string(bytearray)
+    LOG.info(f"{s}")
+    ```
+
 ### Get Temperature Command
 
 ### Limitations

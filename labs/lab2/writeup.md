@@ -27,4 +27,5 @@ Bluetooth LE works with the Artemis being the peripheral device and the laptop a
 Here are the necessary configurations which needed to be made:
 Updating the `connections.yaml` file with the Artemis's MAC Address as well as changing the `ble_service` UUID with a newly generated one.
 ![image](https://user-images.githubusercontent.com/123790450/218940423-10ee21c8-04ae-4600-a2b1-5cb922eddbf5.png)
+
 Updating the `ble_arduino.ino` file with same ble_service UUID

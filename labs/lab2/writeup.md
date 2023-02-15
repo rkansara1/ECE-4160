@@ -17,6 +17,7 @@ To initially connect to the Artemis I first had it print out its MAC adress. Thi
 The provided codebase provides a few helpful functions. The Jupyter Notebook has a BLEService which provides functions for connecting the notebook to the Artemis. The function `ble.connect()` allows the notebook to connect to the Artemis. Here is what that looks like:
 
 ![image](https://user-images.githubusercontent.com/123790450/218937721-ca65f610-3b91-4eaf-8e0f-34b0a2916a9f.png)
+
 ![image](https://user-images.githubusercontent.com/123790450/218937771-e4c33b48-0364-43ed-ac14-72c17414c6fe.png)
 
 Bluetooth LE works with the Artemis being the peripheral device and the laptop as the central device. The Artemis is like a bulletin board with the laptop then reading that board. The information is structured into services and then into characteristic. A service is like a notice on the bulletin board and the characteristic is like a parapgraph on that notice. A service is identified with a UUID, so think of each notice on a bulletin board having it's own name, and then the characteristic is 512 bytes long on that service. In this lab we use two services for `RX_FLOAT` and `RX_STRING`, is The Bluetooth LE specification has a feature called notify. When notify is enabled on a characteristic and the peripheral writes new data on the characteristic the central device is automatically sent that data. This will allow us to create a communciation interface with our Artemis and our laptops to send ToF data, IMU data, etc.
@@ -34,13 +35,19 @@ Updating the `ble_arduino.ino` file with same ble_service UUID
 ![image](https://user-images.githubusercontent.com/123790450/218940691-e28c5ad3-8d8d-4ff5-85f1-8a25528a56db.png)
 
 ### demo.ipynb
-Prior to adding the notificaiton handler the `demo.ipynb` file contained a few given functions such as `PING` and `SEND_TWO_INTS`. Before carrying out all lab tasks here is what the Jupyter Notebook and Arduino Serial Monitor display. (`ble.disconnect` was ran in a lower cell but not inlcuded in the screenshot)
+Prior to adding the notificaiton handler the `demo.ipynb` file contained a few given functions such as `PING` and `SEND_TWO_INTS`. Before carrying out all lab tasks here is what the Jupyter Notebook and Arduino Serial Monitor display. (`ble.disconnect()` was ran in a lower cell but not inlcuded in the screenshot)
 
 ![image](https://user-images.githubusercontent.com/123790450/218941576-9f667fa8-684c-4d6e-a340-4b7508caff24.png)
 
 ![image](https://user-images.githubusercontent.com/123790450/218941636-b0fbe44c-742d-40d4-acd7-381213b1dd1d.png)
 
 ### Send Echo Command
+
+<script src="https://gist.github.com/rkansara1/2c24fb483f15776e12e0e667a895b8ed.js"></script>
+
+<script src="https://gist.github.com/rkansara1/8a7b11c517f778abaa272e893287456f.js"></script>
+
+
 
 ### Get Time Command
 

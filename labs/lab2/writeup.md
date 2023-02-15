@@ -92,7 +92,17 @@ The notification handler takes advantage of the notify feature of the Bluetooth 
 async def string_notification(uuid, bytearray):
     s = ble.bytearray_to_string(bytearray)
     LOG.info(f"{s}")
-    ```
+```
+After that
+```python
+ble.start_notify(ble.uuid["RX_STRING"],string_notification)
+```
+is called. This starts the notification process. Now if `ble.send_command(CMD.GET_TIME_MILLIS,"")` is run it will print out the string that is received without a print command needed. Below is an example of this output.
+
+![image](https://user-images.githubusercontent.com/123790450/218947615-dbf7201f-5b78-4ddf-b61f-662bfeb86eb0.png)
+
+
+
 
 ### Get Temperature Command
 

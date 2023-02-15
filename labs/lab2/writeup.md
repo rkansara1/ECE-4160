@@ -42,11 +42,18 @@ Prior to adding the notificaiton handler the `demo.ipynb` file contained a few g
 ![image](https://user-images.githubusercontent.com/123790450/218941636-b0fbe44c-742d-40d4-acd7-381213b1dd1d.png)
 
 ### Send Echo Command
+The `ECHO` command just takes an input string from the laptop, sends it to the Artemis, displays it to the Artemis's serial monitor, augments the message and sends it back to the laptop to be read. Below is the output on both the Jupyter Notebook and the serial monitor. The command takes advantage of `ble.send_command` function as well as the `ble.receive_string` function.
+
+![image](https://user-images.githubusercontent.com/123790450/218943983-a77e5d49-206b-4e70-af11-13bd99165bdd.png)
+
+
+Python Code:
 
 <script src="https://gist.github.com/rkansara1/2c24fb483f15776e12e0e667a895b8ed.js"></script>
 
-<script src="https://gist.github.com/rkansara1/8a7b11c517f778abaa272e893287456f.js"></script>
+Arduino Code:
 
+<script src="https://gist.github.com/rkansara1/8a7b11c517f778abaa272e893287456f.js"></script>
 
 
 ### Get Time Command

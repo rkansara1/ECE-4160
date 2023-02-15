@@ -42,7 +42,7 @@ Prior to adding the notificaiton handler the `demo.ipynb` file contained a few g
 ![image](https://user-images.githubusercontent.com/123790450/218941636-b0fbe44c-742d-40d4-acd7-381213b1dd1d.png)
 
 ### Send Echo Command
-The `ECHO` command just takes an input string from the laptop, sends it to the Artemis, displays it to the Artemis's serial monitor, augments the message and sends it back to the laptop to be read. Below is the output on both the Jupyter Notebook and the serial monitor. The command takes advantage of `ble.send_command` function as well as the `ble.receive_string` function.
+The `ECHO` command just takes an input string from the laptop, sends it to the Artemis, displays it to the Artemis's serial monitor, augments the message and sends it back to the laptop to be read. Below is the output on both the Jupyter Notebook and the serial monitor. The command takes advantage of `ble.send_command()` function as well as the `ble.receive_string()` function.
 
 ![image](https://user-images.githubusercontent.com/123790450/218943983-a77e5d49-206b-4e70-af11-13bd99165bdd.png)
 
@@ -57,6 +57,31 @@ Arduino Code:
 
 
 ### Get Time Command
+To complete the `GET_TIME_MILLIS` command, a new enum and robot command needed to be added to the list. The `cmd_types.py` file had to be updated with a new enum called `GET_TIME_MILLIS`. The `ble_arduino.ino` CommandTypes needed a new enum added to it with the same name. Additionally another case needed to be added to the switch statement in the same file. The `GET_TIME_MILLIS` command works by sending a command to the arduino. The arduino then takes the time it's been running with the `millis()` function. Then it sends that string back to the laptop to be printed in the Jupyter Notebook. Below is the code snippets as well as the output seen.
+
+Output:
+
+![image](https://user-images.githubusercontent.com/123790450/218945664-1c9f9880-930b-43ab-9f11-9f9abb95bfc9.png)
+
+Python Code:
+```
+ble.send_command(CMD.GET_TIME_MILLIS,"")
+time_millis = ble.receive_string(ble.uuid['RX_STRING'])
+LOG.info(time_millis)
+```
+Arduino Code:
+```
+case GET_TIME_MILLIS:
+      {
+        int time_millis = millis();
+        tx_estring_value.clear();
+        tx_estring_value.append("T:");
+        tx_estring_value.append(time_millis);
+        tx_characteristic_string.writeValue(tx_estring_value.c_str());
+        break;
+      }
+      ```
+
 
 ### Notification Handler
 

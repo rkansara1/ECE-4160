@@ -170,7 +170,6 @@ Output: (The image is small so it will help to open it a new tab)
 ![image](https://user-images.githubusercontent.com/123790450/218949873-468f5669-73ad-4996-b850-8a056f772b9b.png)
 
 
-
-
 ### Limitations
 
+5 seconds of 16 bit values taken at 150 Hz is 12,000 bits or 1.5 KB. The Artemis has a 384 KB of RAM and the program used takes up almos 30 KB. This means there is about 350 KB left for variables. This means the Artemis can store 233 1.5 KB sets of data.

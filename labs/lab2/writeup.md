@@ -18,3 +18,7 @@ The provided codebase provides a few helpful functions. The Jupyter Notebook has
 
 ![image](https://user-images.githubusercontent.com/123790450/218937721-ca65f610-3b91-4eaf-8e0f-34b0a2916a9f.png)
 ![image](https://user-images.githubusercontent.com/123790450/218937771-e4c33b48-0364-43ed-ac14-72c17414c6fe.png)
+
+Bluetooth LE works with the Artemis being the peripheral device and the laptop as the central device. The Artemis is like a bulletin board with the laptop then reading that board. The information is structured into services and then into characteristic. A service is like a notice on the bulletin board and the characteristic is like a parapgraph on that notice. A service is identified with a UUID, so think of each notice on a bulletin board having it's own name, and then the characteristic is 512 bytes long on that service. In this lab we use two services for `RX_FLOAT` and `RX_STRING`, is The Bluetooth LE specification has a feature called notify. When notify is enabled on a characteristic and the peripheral writes new data on the characteristic the central device is automatically sent that data. This will allow us to create a communciation interface with our Artemis and our laptops to send ToF data, IMU data, etc.
+
+# 

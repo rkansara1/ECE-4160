@@ -3,6 +3,7 @@ title: Labs
 ---
 
 [Lab 1: Artemis](/ECE-4160/labs/lab1/writeup)
+[Lab 2: Bluetooth](/ECE-4160/labs/lab2/writeup)
 
 <!-- # About Me
 ## Rishi Kansara, rkk58

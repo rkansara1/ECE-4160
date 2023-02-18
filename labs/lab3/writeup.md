@@ -10,5 +10,10 @@ In order to ensure I have the best view possible I plan on putting one ToF senso
 
 <img width="515" alt="image" src="https://user-images.githubusercontent.com/123790450/219848689-880f7746-33de-4246-abc5-9a311a87238b.png">
 
+Wiring Diagram:
+
+![image](https://user-images.githubusercontent.com/123790450/219849323-3d00c0a3-a3c9-45fd-9bfc-aea1e813e9e7.png)
+Note: `XSHUT` is connected to `PIN 8`
+
 
 ## Lab Tasks

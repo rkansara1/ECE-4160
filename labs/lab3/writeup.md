@@ -44,3 +44,18 @@ Distance Mode Short:
 
 ![distanceModeShort](https://user-images.githubusercontent.com/123790450/219849987-8206030b-b8b8-4687-b769-8242588e42b1.png)
 
+
+### 2 ToF Sensors
+Using the strategy discussed in Prelab it was very straightforward to get two ToF sensors working together. In the void setup all that needed to be included was:
+```c++
+ digitalWrite(SHUTDOWN_PIN, LOW);
+  distanceSensor1.setI2CAddress(10);
+  digitalWrite(SHUTDOWN_PIN, HIGH);
+```
+Two ToF Sensors Connected:
+
+![image](https://user-images.githubusercontent.com/123790450/219850154-4e04aa97-cb9f-4290-92c3-c708930cc545.png)
+
+
+
+

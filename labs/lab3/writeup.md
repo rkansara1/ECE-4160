@@ -17,3 +17,6 @@ Note: `XSHUT` is connected to `PIN 8`
 
 
 ## Lab Tasks
+
+![IMG_1007](https://user-images.githubusercontent.com/123790450/219849507-41d61cb9-59ab-4d6d-ab12-1914e69c0c50.jpg)
+

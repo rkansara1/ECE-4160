@@ -18,5 +18,10 @@ Note: `XSHUT` is connected to `PIN 8`
 
 ## Lab Tasks
 
+ToF Sensor Connected to QWIIC Breakout Board:
 ![IMG_1007](https://user-images.githubusercontent.com/123790450/219849507-41d61cb9-59ab-4d6d-ab12-1914e69c0c50.jpg)
 
+Artemis Scanning for I2C Device:
+
+![image](https://user-images.githubusercontent.com/123790450/219849611-c7c522bd-9918-4017-9ac8-4b94a4bf77ba.png)
+Something interesting occured while scanning for I2C devices. The address show is Ox29 instead of the expected Ox25. The reason for this is that 0x29 is just 0x52 with one bit used to know if the devices is read or writing instead of for the address. 0x52 in binary is 0b1010010 while 0x29 0b101001. 0x29 is just 0x52 with a right bit shift.

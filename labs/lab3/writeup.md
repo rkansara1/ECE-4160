@@ -49,12 +49,55 @@ Distance Mode Short:
 Using the strategy discussed in Prelab it was very straightforward to get two ToF sensors working together. In the void setup all that needed to be included was:
 ```c++
  digitalWrite(SHUTDOWN_PIN, LOW);
-  distanceSensor1.setI2CAddress(10);
-  digitalWrite(SHUTDOWN_PIN, HIGH);
+ distanceSensor1.setI2CAddress(10);
+ digitalWrite(SHUTDOWN_PIN, HIGH);
 ```
 Two ToF Sensors Connected:
 
 ![image](https://user-images.githubusercontent.com/123790450/219850154-4e04aa97-cb9f-4290-92c3-c708930cc545.png)
+
+Output (One sensor is facing a wall the other is pointed at my ceiling):
+
+![image](https://user-images.githubusercontent.com/123790450/219850270-74c14b81-7971-4165-a4a1-ae879a90eecc.png)
+
+To benchmark the limiting factor and seeing how fast I could take reading from the ToF sensors I wrote a simple loop that printed out data as soon as it came in:
+```c++
+  distanceSensor1.startRanging();
+  distanceSensor2.startRanging();
+  if (distanceSensor1.checkForDataReady()) {
+    int distance1 = distanceSensor1.getDistance();
+    distanceSensor1.clearInterrupt();
+    distanceSensor1.stopRanging();
+    Serial.print("Distance 1 (mm): ");
+    Serial.print(distance1);
+    Serial.print("   Time (ms): ");
+    Serial.print(millis());
+  }
+  if (distanceSensor2.checkForDataReady()) {
+    int distance2 = distanceSensor1.getDistance();
+    distanceSensor2.clearInterrupt();
+    distanceSensor2.stopRanging();
+    Serial.print("Distance 2 (mm): ");
+    Serial.print(distance2);
+    Serial.print("   Time (ms): ");
+    Serial.print(millis());
+  } else {
+    Serial.print("   Time (ms): ");
+    Serial.println(millis());
+  }
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/123790450/219850378-0bb81594-cf88-44eb-a6f7-15fb02aaea0f.png)
+
+Analyzing this reveals that it takes about 80ms for the system to send two ToF sensor readings out. Based on how fast this output is I should be able to use my sensors to accurately track distances.
+
+
+
+
+
+
+
 
 
 

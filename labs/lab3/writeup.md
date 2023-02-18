@@ -32,11 +32,15 @@ The ToF sensors have three different distance modes that can be chosen from. The
 
 A function in the included library allows to easily switch between modes. The medium distance mode is not able to be set from the library however. There is only a `setDistanceModeShort()` and `setDistanceModeLong()`. After performing a test by placing a piece of paper and seeing how accurate the sensor was in either mode, I was able to conclude that the long mode suited my situation better. Additionally in terms of the robots performance being able to see the furthest out will help the most with planning routes to take rather than just having higher fidelity nearby distances.
 
+Using 11.5" benchmark:
+
 ![image](https://user-images.githubusercontent.com/123790450/219849972-ff945a06-76f8-47b4-8cf2-db638537452b.png)
 
 Distance Mode Long:
+
 ![distanceModeLong](https://user-images.githubusercontent.com/123790450/219849984-6591ce80-b2c2-4cb7-b912-ed027df44211.png)
 
 Distance Mode Short:
+
 ![distanceModeShort](https://user-images.githubusercontent.com/123790450/219849987-8206030b-b8b8-4687-b769-8242588e42b1.png)
 

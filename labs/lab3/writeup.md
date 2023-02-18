@@ -62,7 +62,10 @@ Output (One sensor is facing a wall the other is pointed at my ceiling):
 
 ![image](https://user-images.githubusercontent.com/123790450/219850270-74c14b81-7971-4165-a4a1-ae879a90eecc.png)
 
-To benchmark the limiting factor and seeing how fast I could take reading from the ToF sensors I wrote a simple loop that printed out data as soon as it came in:
+To benchmark the limiting factor and seeing how fast I could take reading from the ToF sensors I wrote a simple loop that printed out data as soon as it came in.
+
+Arduino Code:
+
 ```c++
   distanceSensor1.startRanging();
   distanceSensor2.startRanging();

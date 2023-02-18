@@ -2,6 +2,8 @@
 title: "Lab 3: Time of Flight Sensors"
 ---
 
+Date: 2/17/22
+
 ## Prelab
 
 My robot will have two Time of Flight Sensors on it. To allow the use of two time of flight sensors with the same I2C address one of the sensors just needs to have its I2C address changed from the default of Ox52. To do this I will take advantage of the `XSHUT` pin on the sensor. If the `XSHUT` pin is set to low on of the ToF sensors, then it is possible to change the I2C address programatically on the other sensor and then turn the `XSHUT` pin back to high to have two working ToF sensors.
@@ -93,10 +95,82 @@ Output:
 Analyzing this reveals that it takes about 80ms for the system to send two ToF sensor readings out. Based on how fast this output is I should be able to use my sensors to accurately track distances.
 
 
+### Graphing Data
+The next step was to now send this data to my laptop in order to analyze the data without having to be wired in. I reused the notifaciton handler and the robot command code from the previous lab. I only had to add in a new command that took in the ToF sensors (as well as integrating all the setup with the I2C and libraries) and do some simple data processing to generate graphs.
 
+Arduino Code:
+```c++
+case GET_TOF_DATA:
+      {
+        int initial_t = millis();
+        tx_estring_value.clear();
+        int time_now = initial_t;
+        for (int i = 0; i < 150; i++) {
+          distanceSensor1.startRanging();  // Write configuration bytes to initiate measurement
+          distanceSensor2.startRanging();
+          T[i] = millis();
+          Dist1[i] = distanceSensor1.getDistance();
+          Dist2[i] = distanceSensor2.getDistance();
+          distanceSensor1.clearInterrupt();
+          distanceSensor1.stopRanging();
+          distanceSensor2.clearInterrupt();
+          distanceSensor2.stopRanging();
+        }
+        for (int k = 0; k < 145; k += 5) {
+          tx_estring_value.clear();
+          for (int i = k; i < k + 5; i++) {
+            tx_estring_value.append("T:");
+            tx_estring_value.append(T[i]);
+            tx_estring_value.append("|");
+            tx_estring_value.append("D1:");
+            tx_estring_value.append(Dist1[i]);
+            tx_estring_value.append("|");
+            tx_estring_value.append("D2:");
+            tx_estring_value.append(Dist2[i]);
+            tx_estring_value.append("|");
+          }
+          tx_characteristic_string.writeValue(tx_estring_value.c_str());
+        }
+        Serial.println("Sent Data!");
+        break;
+      }
+```
 
+Python Code:
 
+```python
+s = []
+async def string_notification(uuid, bytearray):
+    s.append(ble.bytearray_to_string(bytearray))
+        
+ble.start_notify(ble.uuid["RX_STRING"],string_notification)
+ble.send_command(CMD.GET_TOF_DATA,"")
+T = []
+D1 = []
+D2 = []
+for i in range(len(s)):
+    batch = s[i].split("|")
+    for j in range(len(batch)-1):
+        data = batch[j]
+        if data[0] == "T":
+            T.append(float(data[3:]) )
+        if data[:2] == "D1":
+            D1.append(float(data[3:]) )
+        if data[:2] == "D2":
+            D2.append(float(data[3:]) )
 
+T_sec = np.array(T)
+T_sec = T_sec/1000
+plt.plot(T_sec,D1,label = 'Sensor 1')
+plt.plot(T_sec,D2, label = 'Sensor 2')
+plt.legend()
+```
+
+Graph:
+
+![image](https://user-images.githubusercontent.com/123790450/219850579-e6b886c8-72dd-4a8a-936d-8d344db6fdd9.png)
+
+With all of this done I should be able to accurately receive ToF data from my Arduino without being plugged in.
 
 
 

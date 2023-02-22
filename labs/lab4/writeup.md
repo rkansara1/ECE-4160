@@ -36,11 +36,10 @@ As the device is rotated, the IMU registers the gravity force vector in differen
 
 To calculate pitch and roll two equations can be used along with the output of the accelerometer. The formula for pitch is: ![image](https://user-images.githubusercontent.com/123790450/220526373-0948dfe9-bca9-4f6b-9e71-745523c2cd43.png). The formula for roll is: ![png](https://user-images.githubusercontent.com/123790450/220526776-43d63b79-9445-4137-8dbe-77863381d06c.png)
 
-|Roll  | -90 |
-|      |![image](https://user-images.githubusercontent.com/123790450/220528150-445b810c-eaef-426f-8a3d-06dfd630fa1a.png)|
-
-|Pitch |    |
-|      |    |
+|Angle  | -90 | 0 | 90 |
+|Roll   |![image](https://user-images.githubusercontent.com/123790450/220528150-445b810c-eaef-426f-8a3d-06dfd630fa1a.png)|
+|Pitch  |    |
+|       |    |
 
 
 

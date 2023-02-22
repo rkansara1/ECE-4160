@@ -38,7 +38,8 @@ To calculate pitch and roll two equations can be used along with the output of t
 
 |   | 90                                                                                                               | 0 | -90 |   |
 |---|------------------------------------------------------------------------------------------------------------------|---|-----|---|
-|   | ![image](https://user-images.githubusercontent.com/123790450/220528150-445b810c-eaef-426f-8a3d-06dfd630fa1a.png) |   |     |   |
+|   | ![image](https://user-images.githubusercontent.com/123790450/220528150-445b810c-eaef-426f-8a3d-06dfd630fa1a.png) | ![image](https://user-images.githubusercontent.com/123790450/220528623-1e658220-cb93-47cd-83da-e879dc91f6e0.png)
+  |     |   |
 |   |                                                                                                                  |   |     |   |
 |   |                                                                                                                  |   |     |   |
 

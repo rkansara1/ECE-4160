@@ -7,7 +7,7 @@ In this lab we are going to set up an IMU to be able to track our robots acceler
 ## Setting up the IMU
 To first set up the IMU. The breakout board needs to be connected to the Artemis through the Quicc connector like in the below image.
 
-![image](https://user-images.githubusercontent.com/123790450/220520558-9299b2ab-5b05-4c40-8238-855f1c71754f.png)
+![imu_connected_small](https://user-images.githubusercontent.com/123790450/220521804-531cd9f8-dd16-408c-9369-dc5646ea78e6.jpg)
 
 Next I ran the sketch found in File>Examples>Sparkfun 9DOF...>Example1_Basics.ino. Below is the output of that sketch.
 

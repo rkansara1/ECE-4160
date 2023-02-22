@@ -8,4 +8,6 @@ title: Labs
 
 [Lab 3: Time of Flight Sensors](/ECE-4160/labs/lab3/writeup)
 
+[Lab 4: IMU](/ECE-4160/labs/lab4/writeup)
+
 [About me](/ECE-4160/about)

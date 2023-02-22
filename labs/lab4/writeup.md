@@ -28,13 +28,22 @@ This is what the IMU data looks like when it is rotated on it's side:
 ![image](https://user-images.githubusercontent.com/123790450/220524886-738e159d-7658-47a2-877d-75979001677f.png)
 
 
-As the device is rotated, the IMU registers the gravitaty force vector in different directions relative to it's own orientation. When upright, it see it as a postive value of 1000. When upsdie down it sees the same force as -1000. When on the side it sees it as a negative value in the y direction. The IMU has a small unit vector diagram (x,y,z) showing which direction the positive force is in.
+As the device is rotated, the IMU registers the gravity force vector in different directions relative to it's own orientation. When upright, it see it as a postive value of 1000. When upsdie down it sees the same force as -1000. When on the side it sees it as a negative value in the y direction. The IMU has a small unit vector diagram (x,y,z) showing which direction the positive force is in.
 ![image](https://user-images.githubusercontent.com/123790450/220525407-09663ecc-7d00-498a-96fe-e62fe38741d0.png)
 
 
 ## Accelerometer
 
 To calculate pitch and roll two equations can be used along with the output of the accelerometer. The formula for pitch is: ![image](https://user-images.githubusercontent.com/123790450/220526373-0948dfe9-bca9-4f6b-9e71-745523c2cd43.png). The formula for roll is: ![png](https://user-images.githubusercontent.com/123790450/220526776-43d63b79-9445-4137-8dbe-77863381d06c.png)
+
+|Roll  | -90 |
+|      |![image](https://user-images.githubusercontent.com/123790450/220528150-445b810c-eaef-426f-8a3d-06dfd630fa1a.png)|
+
+|Pitch |    |
+|      |    |
+
+
+
 
 
 

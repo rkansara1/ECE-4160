@@ -1,5 +1,5 @@
 ---
-title: Lab 4: IMU
+title: "Lab 4: IMU"
 ---
 2/21/23
 

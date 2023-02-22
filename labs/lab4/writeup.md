@@ -40,6 +40,22 @@ Roll -90: ![image](https://user-images.githubusercontent.com/123790450/220528150
 
 Roll 0: ![image](https://user-images.githubusercontent.com/123790450/220528803-a870597e-b68c-4541-b2e8-c67c04930d7c.png)
 
+Roll 90: ![image](https://user-images.githubusercontent.com/123790450/220529049-7ad258c4-df18-4220-b317-82be4385fa77.png)
+
+Pitch -90: ![image](https://user-images.githubusercontent.com/123790450/220529172-bfee2639-7d42-4498-bea9-93477c002a98.png)
+
+Pitch 0: ![image](https://user-images.githubusercontent.com/123790450/220529228-b4912ee5-30d6-4bf2-a5b7-43a36371ad01.png)
+
+Pitch 90: ![image](https://user-images.githubusercontent.com/123790450/220529245-a4b92ae5-1d60-4371-a390-ed7d136046c0.png)
+
+When performing tests by placing the IMU at -90 and 90 degrees the output was almost exactly the angle the IMU was at. Due to this I did not implement a scaling factor that would fit the data to a range.
+
+I performed a FFT in Python on the pitch and roll data:
+![image](https://user-images.githubusercontent.com/123790450/220535093-33d19f02-f20d-454d-9384-b6de7113c1d4.png)
+![image](https://user-images.githubusercontent.com/123790450/220535179-249f5a00-cd4a-4dc8-9afd-215fc68596e6.png)
+
+
+
 
 
 

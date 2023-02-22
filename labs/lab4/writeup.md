@@ -51,8 +51,26 @@ Pitch 90: ![image](https://user-images.githubusercontent.com/123790450/220529245
 When performing tests by placing the IMU at -90 and 90 degrees the output was almost exactly the angle the IMU was at. Due to this I did not implement a scaling factor that would fit the data to a range.
 
 I performed a FFT in Python on the pitch and roll data:
+
 ![image](https://user-images.githubusercontent.com/123790450/220535093-33d19f02-f20d-454d-9384-b6de7113c1d4.png)
+
 ![image](https://user-images.githubusercontent.com/123790450/220535179-249f5a00-cd4a-4dc8-9afd-215fc68596e6.png)
+
+After analyzing these two fourier transforms there isn't much activity on the higher frequency end of the spectrum, so it seems like implementing a low pass filter won't be necessary.
+
+## Gyroscope
+To calculate any of the angles using gyroscope data a simple formula is used: ![image](https://user-images.githubusercontent.com/123790450/220538074-bb565949-d77b-493d-b8d7-c58d4c8bf9bb.png). This formula is then implemented in the Arduino like this:
+
+```c++
+      dt = (micros() - last_time) / 1000000.;
+      last_time = micros();
+      pitch_g = pitch_g + myICM.gyrY() * dt;
+      roll_g = roll_g + myICM.gyrX() * dt;
+      yaw_g = yaw_g + myICM.gyrZ() * dt;
+```
+
+![image](https://user-images.githubusercontent.com/123790450/220537636-47589950-5472-43a3-9ed3-e9439cf1c2b4.png)
+
 
 
 

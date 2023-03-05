@@ -94,9 +94,15 @@ To use both sources of data I implemented a complementary filter. To implement t
       roll = (roll + myICM.gyrX()*dt) * beta + roll_a * (1-beta);
 ```
 
-Pitch and Roll with complementary filter:
+Pitch with complementary filter:
 
+![image](https://user-images.githubusercontent.com/123790450/222942142-e671efa4-6e40-4331-88e3-a749a8e00d3a.png)
 
+Roll with complementary filter:
+
+![image](https://user-images.githubusercontent.com/123790450/222942163-d9749881-0961-479c-9562-fda69b313878.png)
+
+Based on the results the filter is able to track the two desired values with little noise while also combatting drift. The chosen weight is adequate for robot use.
 
 
 

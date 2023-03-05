@@ -104,6 +104,30 @@ Roll with complementary filter:
 
 Based on the results the filter is able to track the two desired values with little noise while also combatting drift. The chosen weight is adequate for robot use.
 
+## Sample Data
+First I evalued how fast my sensor was able to sample data. To accomplish this I set up a simple loop that just measured the time it took to collect one set of data from the IMU. After running the following code I found it took 0.3 seconds to collect data. This was longer than the 80ms it took to get the ToF sensor data. 
+
+```c++
+      for (int i = 0; i < 150; i++) {
+      if (myICM.dataReady()) {
+        t1 = millis();
+        myICM.getAGMT();
+        acc_x[i] = myICM.accX();
+        acc_y[i] = myICM.accY();
+        acc_z[i] = myICM.accZ();
+        gyr_x[i] = myICM.gyrX();
+        gyr_y[i] = myICM.gyrY();
+        gyr_z[i] = myICM.gyrZ();
+        t2 = millis();
+        time[i] = (t2-t1);
+        time_sum += time[i];
+      }
+    }
+    float time_avg = time_sum / 150;
+    Serial.println(time_sum);
+    time_sum = 0;
+```
+
 
 
 

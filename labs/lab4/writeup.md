@@ -74,6 +74,9 @@ The video shows the output of the three angles from the gyroscope data using the
 
 [Screencast from 03-04-2023 09:37:29 PM.webm](https://user-images.githubusercontent.com/123790450/222938654-6e765a9f-09f9-4421-ba81-7d22adc7f6ef.webm)
 
+<video src="https://user-images.githubusercontent.com/123790450/222938654-6e765a9f-09f9-4421-ba81-7d22adc7f6ef.webm" controls="controls" style="max-width: 730px;">
+</video>
+
 Next I compared the accelerometer data to the gyroscope data to see how they differed. The main difference was the gyroscope data had considerably less noise but it also tended to drift.
 
 Pitch Comparison:

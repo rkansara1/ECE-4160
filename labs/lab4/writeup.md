@@ -191,6 +191,12 @@ case GET_DATA:
         break;
       }    
 ```
+This is what the output looked like on my laptop:
 
+![image](https://user-images.githubusercontent.com/123790450/222990988-de76ddcf-c6e3-41f8-ba48-c5c22aef43cd.png)
 
+To figure out the maximum time I could record data for I looked at the output of my current program that recorded five seconds.
+
+![image](https://user-images.githubusercontent.com/123790450/222992035-ea5d71b0-7f6d-4e66-88cb-3c56d9680efe.png)
+First I calculated how much of the used space was because of the arrays I already used. I used 9 750 length float arrays. This took up a total of 27,000 bytes (9\*750\*4) 
 

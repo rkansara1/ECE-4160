@@ -83,17 +83,18 @@ Pitch Comparison:
 Roll Comparison:
 ![image](https://user-images.githubusercontent.com/123790450/222938921-71e8d655-afad-4e24-b4ca-9f28ab2df099.png)
 
-To use both sources of data I implemented a complementary filter. To implement the complementary filter I used a formula from this [pdf](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxteWltdWVzdGltYXRpb25leHBlcmllbmNlfGd4OjY1Yzk3YzhiZmE1N2M4Y2U). The formula calculates the weight of the complementary filter for a desired time constant. 
+To use both sources of data I implemented a complementary filter. To implement the complementary filter I used a formula from this [pdf](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxteWltdWVzdGltYXRpb25leHBlcmllbmNlfGd4OjY1Yzk3YzhiZmE1N2M4Y2U). The formula calculates the weight of the complementary filter for a desired time constant. ![image](https://user-images.githubusercontent.com/123790450/222941725-4fc98e8b-18ed-45bd-aa5c-1773417e1223.png). I decided I wanted my filter to have a time constant of approximatley 0.5 seconds. This was primarily so that I could have the filter use the gryoscope data for short term accuracy and the acceleromater data for long term accuracy. This would allow the accelerometer to correct the gyroscope drift and would filter out the accelerometer noise. After printing out the time for the loop to complete, I was able to calculate a dt of about 0.00185 seconds. Using this value I could now calculate alpha. ![image](https://user-images.githubusercontent.com/123790450/222942000-e0529cce-8555-41a6-acfd-e3d954f8efd5.png)
+
+
 
 ```c++
-      float alpha = 0.9;
-      float beta = 0.9;
-      pitch = (pitch + myICM.gyrY()*dt) * alpha + pitch_a * (1-alpha);
+      float alpha = 0.996;
+      float beta = 0.996;
+      pitch = (pitch - myICM.gyrY()*dt) * alpha + pitch_a * (1-alpha);
       roll = (roll + myICM.gyrX()*dt) * beta + roll_a * (1-beta);
 ```
 
-Pitch with complementary filter:
-![image](https://user-images.githubusercontent.com/123790450/222939229-fc79b9be-00c6-4adf-b138-eab4b1f8b0b5.png)
+Pitch and Roll with complementary filter:
 
 
 

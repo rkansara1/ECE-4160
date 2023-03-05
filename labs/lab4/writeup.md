@@ -68,6 +68,7 @@ To calculate any of the angles using gyroscope data a simple formula is used: ![
       roll_g = roll_g + myICM.gyrX() * dt;
       yaw_g = yaw_g + myICM.gyrZ() * dt;
 ```
+[Code sourced from Lecture 4 Code]
 
 ![image](https://user-images.githubusercontent.com/123790450/220537636-47589950-5472-43a3-9ed3-e9439cf1c2b4.png)
 

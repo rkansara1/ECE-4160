@@ -202,5 +202,13 @@ To figure out the maximum time I could record data for I looked at the output of
 ![image](https://user-images.githubusercontent.com/123790450/222992035-ea5d71b0-7f6d-4e66-88cb-3c56d9680efe.png)
 First I calculated how much of the used space was because of the arrays I already used. I used 9 750 length float arrays. This took up a total of 27,000 bytes (9\*750\*4). The current program took up 72,520 bytes so that meant the program took up 45,520 bytes without the data arrays. With a maximum memory size of 393216 bytes, this left 347696 bytes of data left for data storage. With 9 data arrays of floats needing to be made this mean there was space for 9 float arrays with a length of 9658. In my testing an array of 150 length represented 1 seconds. This means I could take a max of 64 seconds worth of data.
 
+## Cut the Cord
 
+Having been given an 850 mAh battery and a 650 mAh battery, I decided to use the 650 mAh battery to power the arduino and the 850 mAh to power the RC car. This was because the motors of the car will most likely use more power than the Artemis. Additionally powering the sensors and motors off of separate power sources is a good way to reduce EMI. To make the entire process easy I decided to solder an additional connector onto the battery. This would allow me to hotswap the batteries more easily. The below image shows the Artemis powered off of the battery.
+
+![image](https://user-images.githubusercontent.com/123790450/222992742-e56d05ae-40e5-41ac-9bb9-3da6b00e667e.png)
+
+The Artemis was able to successfully communicate while plugged in as demonstrated by the image below:
+
+![image](https://user-images.githubusercontent.com/123790450/222992891-f0cde59c-2238-42e8-b780-bb8bdd2fbb5b.png)
 

@@ -81,6 +81,8 @@ Pitch Comparison:
 ![image](https://user-images.githubusercontent.com/123790450/220537636-47589950-5472-43a3-9ed3-e9439cf1c2b4.png)
 
 Roll Comparison:
+![image](https://user-images.githubusercontent.com/123790450/222938921-71e8d655-afad-4e24-b4ca-9f28ab2df099.png)
+
 
 
 

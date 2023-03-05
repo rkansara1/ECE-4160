@@ -198,5 +198,7 @@ This is what the output looked like on my laptop:
 To figure out the maximum time I could record data for I looked at the output of my current program that recorded five seconds.
 
 ![image](https://user-images.githubusercontent.com/123790450/222992035-ea5d71b0-7f6d-4e66-88cb-3c56d9680efe.png)
-First I calculated how much of the used space was because of the arrays I already used. I used 9 750 length float arrays. This took up a total of 27,000 bytes (9\*750\*4) 
+First I calculated how much of the used space was because of the arrays I already used. I used 9 750 length float arrays. This took up a total of 27,000 bytes (9\*750\*4). The current program took up 72,520 bytes so that meant the program took up 45,520 bytes without the data arrays. With a maximum memory size of 393216 bytes, this left 347696 bytes of data left for data storage. With 9 data arrays of floats needing to be made this mean there was space for 9 float arrays with a length of 9658. In my testing an array of 150 length represented 1 seconds. This means I could take a max of 64 seconds worth of data.
+
+
 

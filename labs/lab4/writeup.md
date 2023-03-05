@@ -83,7 +83,7 @@ Pitch Comparison:
 Roll Comparison:
 ![image](https://user-images.githubusercontent.com/123790450/222938921-71e8d655-afad-4e24-b4ca-9f28ab2df099.png)
 
-To use both sources of data I implemented a complementary filter. To implement the complementary filter I used a formula from this ![pdf][https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxteWltdWVzdGltYXRpb25leHBlcmllbmNlfGd4OjY1Yzk3YzhiZmE1N2M4Y2U]. The formula calculates the weight of the complementary filter for a desired time constant. 
+To use both sources of data I implemented a complementary filter. To implement the complementary filter I used a formula from this [pdf](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxteWltdWVzdGltYXRpb25leHBlcmllbmNlfGd4OjY1Yzk3YzhiZmE1N2M4Y2U). The formula calculates the weight of the complementary filter for a desired time constant. 
 
 ```c++
       float alpha = 0.9;

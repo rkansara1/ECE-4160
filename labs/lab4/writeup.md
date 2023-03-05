@@ -83,9 +83,16 @@ Pitch Comparison:
 Roll Comparison:
 ![image](https://user-images.githubusercontent.com/123790450/222938921-71e8d655-afad-4e24-b4ca-9f28ab2df099.png)
 
+To use both sources of data I implemented a complementary filter.
+```c++
+      float alpha = 0.9;
+      float beta = 0.9;
+      pitch = (pitch + myICM.gyrY()*dt) * alpha + pitch_a * (1-alpha);
+      roll = (roll + myICM.gyrX()*dt) * beta + roll_a * (1-beta);
+```
 
-
-
+Pitch with complementary filter:
+![image](https://user-images.githubusercontent.com/123790450/222939229-fc79b9be-00c6-4adf-b138-eab4b1f8b0b5.png)
 
 
 

@@ -68,10 +68,18 @@ To calculate any of the angles using gyroscope data a simple formula is used: ![
       roll_g = roll_g + myICM.gyrX() * dt;
       yaw_g = yaw_g + myICM.gyrZ() * dt;
 ```
-[Code sourced from Lecture 4 Code]
+[NOTE: Sourced from Lecture 4 Code]
 
+The video shows the output of the three angles from the gyroscope data using the above formulas:
+
+[Screencast from 03-04-2023 09:37:29 PM.webm](https://user-images.githubusercontent.com/123790450/222938654-6e765a9f-09f9-4421-ba81-7d22adc7f6ef.webm)
+
+Next I compared the accelerometer data to the gyroscope data to see how they differed. The main difference was the gyroscope data had considerably less noise but it also tended to drift.
+
+Pitch Comparison:
 ![image](https://user-images.githubusercontent.com/123790450/220537636-47589950-5472-43a3-9ed3-e9439cf1c2b4.png)
 
+Roll Comparison:
 
 
 

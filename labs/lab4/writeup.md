@@ -127,8 +127,70 @@ First I evalued how fast my sensor was able to sample data. To accomplish this I
     Serial.println(time_sum);
     time_sum = 0;
 ```
+Next I atempted to send the ToF data with the IMU data from the Artemis to my laptop over bluetooth. To accomplish this I decided to send all the data each time it was collected in one array and just repeat that for the desired amount of time. This was the ideal way to collect data because it allowed me to keep all the data together with one time stamp and would allow me to parse it all at once more easily. It would work to separate the data into different arrays but that would just require more parsing. Having the artemis send each iteration of data at once allows the data to be sent quicker. The following code shows the implmentation:
 
-
+```c++
+case GET_DATA:
+      {
+        tx_estring_value.clear();
+        for (int i = 0; i < 750; i++) {
+          if (myICM.dataReady()) {
+            myICM.getAGMT();
+            distanceSensor1.startRanging();  // Write configuration bytes to initiate measurement
+            distanceSensor2.startRanging();
+            T[i] = millis();
+            Dist1[i] = distanceSensor1.getDistance();
+            Dist2[i] = distanceSensor2.getDistance();
+            acc_x[i] = myICM.accX();
+            acc_y[i] = myICM.accY();
+            acc_z[i] = myICM.accZ();
+            gyr_x[i] = myICM.gyrX();
+            gyr_y[i] = myICM.gyrY();
+            gyr_z[i] = myICM.gyrZ();
+            distanceSensor1.clearInterrupt();
+            distanceSensor1.stopRanging();
+            distanceSensor2.clearInterrupt();
+            distanceSensor2.stopRanging();
+            // Serial.print("i: ");
+            // Serial.println(i);
+          }
+        }
+        // Sends ToF
+        for (int k = 0; k < 750; k++) {
+          tx_estring_value.clear();
+          tx_estring_value.append("T:");
+          tx_estring_value.append(T[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("D1:");
+          tx_estring_value.append(Dist1[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("D2:");
+          tx_estring_value.append(Dist2[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("AX:");
+          tx_estring_value.append(acc_x[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("AY:");
+          tx_estring_value.append(acc_y[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("AZ:");
+          tx_estring_value.append(acc_z[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("GX:");
+          tx_estring_value.append(gyr_x[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("GY:");
+          tx_estring_value.append(gyr_y[k]);
+          tx_estring_value.append("|");
+          tx_estring_value.append("GZ:");
+          tx_estring_value.append(gyr_z[k]);
+          tx_estring_value.append("|");
+          tx_characteristic_string.writeValue(tx_estring_value.c_str());
+        }
+        Serial.println("Sent IMU & ToF Data!");
+        break;
+      }    
+```
 
 
 

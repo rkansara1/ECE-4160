@@ -72,8 +72,6 @@ To calculate any of the angles using gyroscope data a simple formula is used: ![
 
 The video shows the output of the three angles from the gyroscope data using the above formulas:
 
-[Screencast from 03-04-2023 09:37:29 PM.webm](https://user-images.githubusercontent.com/123790450/222938654-6e765a9f-09f9-4421-ba81-7d22adc7f6ef.webm)
-
 <video src="https://user-images.githubusercontent.com/123790450/222938654-6e765a9f-09f9-4421-ba81-7d22adc7f6ef.webm" controls="controls" style="max-width: 730px;">
 </video>
 

@@ -217,3 +217,8 @@ The Artemis was able to successfully communicate while plugged in as demonstrate
 I tested the RC car for a bit. Some of the things I noticed were it would bounce around when hitting obstacles due to it's large wheel size. I also noticed it could be run in rightside up and upside down because the wheels extended past the frame on both sides. This means that if it hit an obstacle it would just flip over. Another thing I noticed is the remote wouldn't drive the car forwards or backwards and would only allow the car to drive if it was also turning. This was likely just an issue with a controller because that would be a very limiting design choice for a toy. Here is a video of me using the car.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qiYTEfz9gIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+It was difficult to get the robot to perform a stunt because of the broken remote control. To demonstrate the IMU data collection was working I decided to just rotate the car by hand to see the received data. Here is the IMU positioned on the robot:
+
+![image](https://user-images.githubusercontent.com/123790450/222995307-b3890f22-25ad-4b5d-838d-f705169e1c79.png)
+

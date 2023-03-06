@@ -232,6 +232,3 @@ After rotating the entire robot by hand in different orientations here is the ou
 ![image](https://user-images.githubusercontent.com/123790450/222995859-b55274cf-d70c-48fa-ba21-58d929a53dba.png)
 
 I have now succesfully integrated an IMU into my robot as well as developed a method to process the signals from the sensor.
-
-$$\theta_t = 5$$ 
-

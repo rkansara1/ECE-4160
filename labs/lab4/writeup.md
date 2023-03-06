@@ -222,3 +222,8 @@ It was difficult to get the robot to perform a stunt because of the broken remot
 
 ![image](https://user-images.githubusercontent.com/123790450/222995307-b3890f22-25ad-4b5d-838d-f705169e1c79.png)
 
+After rotating the entire robot by hand in different orientations here is the output from the IMU and ToF:
+![image](https://user-images.githubusercontent.com/123790450/222995843-1981707d-a949-461e-a448-0a67f5ae32a1.png)
+![image](https://user-images.githubusercontent.com/123790450/222995850-7003bee7-3a65-44bb-b764-491f8bd48e76.png)
+![image](https://user-images.githubusercontent.com/123790450/222995859-b55274cf-d70c-48fa-ba21-58d929a53dba.png)
+

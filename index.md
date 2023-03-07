@@ -10,6 +10,6 @@ title: Labs
 
 [Lab 4: IMU](/ECE-4160/labs/lab4/writeup)
 
-[Lab 5: Motor Driver & Open Loop Controller](/ECE-4160/labs/lab5/writeup.md) 
+[Lab 5: Motor Driver & Open Loop Controller](/ECE-4160/labs/lab5/writeup) 
 
 [About me](/ECE-4160/about)

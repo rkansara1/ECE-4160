@@ -69,7 +69,49 @@ The minimum PWM to rotate was 190 PWM
 
 <video src ="https://user-images.githubusercontent.com/123790450/223644198-6b8b345b-3828-4aab-8a9d-534248c1f16b.MOV" controls="controls" style="max-width:730px;"></video>
 
-Next I placed the motor on the ground to see if any motor calibration was needed. I initially believed due to the different dead bands for each motor I would require some calibration factor however after testing I discovered it was not needed. In the below video you can see the car veers off slightly towards the end. The reason for that is not a motor miscalibration but instead a flooring issue. The tile it drove over is slightly raised and not level with the previous tiles causing the car to veer slightly.
+Next I placed the motor on the ground to see if any motor calibration was needed. I initially believed due to the different dead bands for each motor I would require some calibration factor however after testing I discovered it was not needed. In the below video you can see the car veers off slightly towards the end. The reason for that is not a motor miscalibration but instead a flooring issue. The tile it drove over is slightly raised and not level with the previous tiles causing the car to veer slightly. You can see in the video the car is still over the center line.
 
 <video src ="https://user-images.githubusercontent.com/123790450/223636208-bdcced6e-665f-4b5c-a4fd-cf6a21f8121b.MOV" controls="controls" style ="max-width:730px;"> </video>
+
+Next I put a series of commands together to demonstrate the robot was capable of making multiple moves. Here are the commands:
+``` c++
+ // MOVE FORWARD
+  analogWrite(2, 0);
+  analogWrite(3, 75);
+  analogWrite(4, 75);
+  analogWrite(5, 0);
+  delay(2000);
+  // TURN
+  analogWrite(2, 0);
+  analogWrite(3, 190);
+  analogWrite(4, 0);
+  analogWrite(5, 190);
+  delay(1500);
+  // MOVE BACKWARD
+  analogWrite(2, 75);
+  analogWrite(3, 0);
+  analogWrite(4, 0);
+  analogWrite(5, 75);
+  delay(1000);
+  //TURN
+  analogWrite(2, 0);
+  analogWrite(3, 190);
+  analogWrite(4, 0);
+  analogWrite(5, 190);
+  delay(1500);
+  //MOVE FORWARD
+  analogWrite(2, 0);
+  analogWrite(3, 75);
+  analogWrite(4, 75);
+  analogWrite(5, 0);
+  delay(1000);
+  //STOP
+  analogWrite(2, 0);
+  analogWrite(3, 0);
+  analogWrite(4, 0);
+  analogWrite(5, 0);
+```
+The following video shows the results of these commands
+
+<video src ="https://user-images.githubusercontent.com/123790450/223647024-4c3b933f-60b8-4687-99eb-88eff8c677bf.MOV" controls="controls" style="max-width:730px;"></video>
 

@@ -60,6 +60,18 @@ The motor driving the left wheels had a higher minimum PWM at 39 compared to the
 
 <video src="https://user-images.githubusercontent.com/123790450/223639737-ed27f8e5-2de4-4ad4-af0e-f7b57a1fafba.MOV" controls="controls" style = "max-width: 730px;"> </video>
 
+I found that the minimum power to drive forward was 43 PWM to each motor.
+
+
+<video src="https://user-images.githubusercontent.com/123790450/223644155-bb0e85a9-435b-4cb2-a9f0-e2a559d06691.MOV" controls ="controls" style = "max-width:730px;"> </video>
+
+
+The minimum PWM to rotate was 190 PWM
+
+
+<video src ="https://user-images.githubusercontent.com/123790450/223644198-6b8b345b-3828-4aab-8a9d-534248c1f16b.MOV" controls="controls" style="max-width:730px;"></video>
+
+
 
 Next I placed the motor on the ground to see if any motor calibration was needed.
 

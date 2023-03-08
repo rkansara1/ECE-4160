@@ -46,7 +46,7 @@ My next step was soldering the battery onto the power connections for the motor 
 
 With all the connections confirmed working I now focused on securing all the components adequately to the car. The following diagram shows how I secured the components and where I placed all the different sensors/controllers.
 
-![image](https://user-images.githubusercontent.com/123790450/223636631-a9082682-1156-472f-a0f4-209f5ef16cda.png)
+<img width="1409" alt="image" src="https://user-images.githubusercontent.com/123790450/223640069-882e9967-f45c-4517-8a66-a7842518ed61.png">
 
 Next I experimentally tested to find the dead band in PWM for my motors. Through incrementing through different values I found the dead band for my motor.
 

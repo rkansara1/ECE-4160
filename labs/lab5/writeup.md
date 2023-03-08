@@ -65,16 +65,11 @@ I found that the minimum power to drive forward was 43 PWM to each motor.
 
 <video src="https://user-images.githubusercontent.com/123790450/223644155-bb0e85a9-435b-4cb2-a9f0-e2a559d06691.MOV" controls ="controls" style = "max-width:730px;"> </video>
 
-
 The minimum PWM to rotate was 190 PWM
-
 
 <video src ="https://user-images.githubusercontent.com/123790450/223644198-6b8b345b-3828-4aab-8a9d-534248c1f16b.MOV" controls="controls" style="max-width:730px;"></video>
 
+Next I placed the motor on the ground to see if any motor calibration was needed. I initially believed due to the different dead bands for each motor I would require some calibration factor however after testing I discovered it was not needed. In the below video you can see the car veers off slightly towards the end. The reason for that is not a motor miscalibration but instead a flooring issue. The tile it drove over is slightly raised and not level with the previous tiles causing the car to veer slightly.
 
-
-Next I placed the motor on the ground to see if any motor calibration was needed.
-
-
-https://user-images.githubusercontent.com/123790450/223636208-bdcced6e-665f-4b5c-a4fd-cf6a21f8121b.MOV
+<video src ="https://user-images.githubusercontent.com/123790450/223636208-bdcced6e-665f-4b5c-a4fd-cf6a21f8121b.MOV" controls="controls" style ="max-width:730px;"> </video>
 

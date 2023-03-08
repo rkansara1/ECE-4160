@@ -39,9 +39,18 @@ I then soldered the motor leads onto each motor controller. My next test was to 
 <video src="https://user-images.githubusercontent.com/123790450/223635040-1c92fe3c-9338-47fd-b0ff-df26afd08459.MOV" controls="controls" style="max-width: 730px;">
 </video>
 
-My next step was soldering the battery onto the power connections for the motor controller to run both of the motors at once without the power supply. I executed both of the previous code snippets to get the following result.
+My next step was soldering the battery onto the power connections for the motor controller to run both of the motors at once without the power supply. I executed both of the previous code snippets to get the following result. The right set of wheels were spinning slower but that was not an actual issue with the motors that was just due to a low PWM value.
 
 <video src="https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV" style="max-width: 730px;">
 </video>
-https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV
+
+With all the connections confirmed working I now focused on securing all the components adequately to the car. The following diagram shows how I secured the components and where I placed all the different sensors/controllers.
+
+![image](https://user-images.githubusercontent.com/123790450/223636631-a9082682-1156-472f-a0f4-209f5ef16cda.png)
+
+
+Next I placed the motor on the ground to see if any motor calibration was needed.
+
+
+https://user-images.githubusercontent.com/123790450/223636208-bdcced6e-665f-4b5c-a4fd-cf6a21f8121b.MOV
 

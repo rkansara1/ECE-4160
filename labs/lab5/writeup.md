@@ -28,7 +28,7 @@ I first initially tested the system by hooking up a power supply set to 3.7 V (t
 ![image](https://user-images.githubusercontent.com/123790450/223633756-9062ed6a-4b2f-459f-ba68-dd764ab70137.png)
 ![image](https://user-images.githubusercontent.com/123790450/223634407-c273f8b2-0106-488d-9760-967e8de8b3ec.png)
 
-I then soldered the battery and the motor leads onto each motor controller. My next test was to see if I could get the robot to spin on its side. Still using the power supply I tested rotating each side of the wheels using the same code as before. I also tested going clockwise and counterclockwise with the motors. To accomplish that in the program I just changed which pin I was writing to. So I executed the previous code or this code to test.
+I then soldered the motor leads onto each motor controller. My next test was to see if I could get the robot to spin on its side. Still using the power supply I tested rotating each side of the wheels using the same code as before. I also tested going clockwise and counterclockwise with the motors. To accomplish that in the program I just changed which pin I was writing to. So I executed the previous code or this code to test.
 ```c++
   analogWrite(2, 75);
   analogWrite(3, 0);
@@ -38,3 +38,10 @@ I then soldered the battery and the motor leads onto each motor controller. My n
 
 <video src="https://user-images.githubusercontent.com/123790450/223635040-1c92fe3c-9338-47fd-b0ff-df26afd08459.MOV" controls="controls" style="max-width: 730px;">
 </video>
+
+My next step was soldering the battery onto the power connections for the motor controller to run both of the motors at once without the power supply. I executed both of the previous code snippets to get the following result.
+
+<video src="https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV" style="max-width: 730px;">
+</video>
+https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV
+

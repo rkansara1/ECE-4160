@@ -48,6 +48,23 @@ With all the connections confirmed working I now focused on securing all the com
 
 ![image](https://user-images.githubusercontent.com/123790450/223636631-a9082682-1156-472f-a0f4-209f5ef16cda.png)
 
+Next I experimentally tested to find the dead band in PWM for my motors. Through incrementing through different values I found the dead band for my motor.
+
+```c++
+  analogWrite(2, 0); // LEFT
+  analogWrite(3, 39);
+  analogWrite(4, 28);//RIGHT
+  analogWrite(5, 0);
+```
+The motor driving the left wheels had a higher minimum PWM at 39 compared to the right motor at 28. Here is a video showing the motor stalling.
+
+
+
+<video src ="https://user-images.githubusercontent.com/123790450/223639737-ed27f8e5-2de4-4ad4-af0e-f7b57a1fafba.MOV" style = "max-width: 730px;"> </video>
+
+
+
+
 
 Next I placed the motor on the ground to see if any motor calibration was needed.
 

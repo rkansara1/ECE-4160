@@ -41,7 +41,7 @@ I then soldered the motor leads onto each motor controller. My next test was to 
 
 My next step was soldering the battery onto the power connections for the motor controller to run both of the motors at once without the power supply. I executed both of the previous code snippets to get the following result. The right set of wheels were spinning slower but that was not an actual issue with the motors that was just due to a low PWM value.
 
-<video src="https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV" style="max-width: 730px;">
+<video src="https://user-images.githubusercontent.com/123790450/223635845-30f1b32d-a4bf-4a8c-902f-203285491aa7.MOV" controls ="controls" style="max-width: 730px;">
 </video>
 
 With all the connections confirmed working I now focused on securing all the components adequately to the car. The following diagram shows how I secured the components and where I placed all the different sensors/controllers.
@@ -58,12 +58,7 @@ Next I experimentally tested to find the dead band in PWM for my motors. Through
 ```
 The motor driving the left wheels had a higher minimum PWM at 39 compared to the right motor at 28. Here is a video showing the motor stalling.
 
-
-
-<video src ="https://user-images.githubusercontent.com/123790450/223639737-ed27f8e5-2de4-4ad4-af0e-f7b57a1fafba.MOV" style = "max-width: 730px;"> </video>
-
-
-
+<video src="https://user-images.githubusercontent.com/123790450/223639737-ed27f8e5-2de4-4ad4-af0e-f7b57a1fafba.MOV" controls="controls" style = "max-width: 730px;"> </video>
 
 
 Next I placed the motor on the ground to see if any motor calibration was needed.

@@ -43,6 +43,8 @@ Results:
 
 <video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
+Based on the video the robot is able to complete the task successfully. It look like it gets within a half inch (~13 mm) of the goal.
+
 
 ![y step response trial 3](https://user-images.githubusercontent.com/123790450/226803500-243590a7-03e0-4114-8d13-c89e15968923.png)
 

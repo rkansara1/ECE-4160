@@ -27,11 +27,19 @@ Block Diagram:
 
 ![image](https://user-images.githubusercontent.com/123790450/226800116-55d2c02e-c32f-4b23-9d69-b8e93a17c488.png)
 
-I decided to stick with the long range sensing value on the distance sensor because it would allow me to have the robot start from a further away position better. Additionally it was able to measure 1 foot accurately to +- 5 mm in my testing from a previous lab. The robot samples data as quickly as it comes in. I initially tried to not check for data ready however it would lead to the distance sensor value getting stuck to one value for the rest of the loop causing the robot to crash into the wall no matter how close the actual value was.
+I decided to stick with the long range sensing value on the distance sensor because it would allow me to have the robot start from a further away position better. Additionally it was able to measure 1 foot accurately to +- 5 mm in my testing from a previous lab. The robot samples data as quickly as it comes in. I initially tried to not check for data ready however it would lead to the distance sensor value getting stuck to one value for the rest of the loop causing the robot to crash into the wall no matter how close the actual value was. I am not initially attemtping an Integrator or Derivative term so the speed of the sampling doesn't matter as much as it would in those scenarios.
 
 ```c++
 while (!distanceSensor2.checkForDataReady()) {
         delay(1);
       }
 ```
+
+Results:
+
+
+<video>
+https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov
+
+
 

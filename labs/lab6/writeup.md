@@ -14,6 +14,8 @@ while(true)
   if (runPID)
     controlLaw
     recordData
+  if (error < threshold)
+    done = true
   if (done)
     writeData
 ```
@@ -47,5 +49,5 @@ This graph shows the step response of the ouput to a step change in input of 300
 
 ![motor pwm trial 3](https://user-images.githubusercontent.com/123790450/226803531-cf027858-f9c7-45e5-b0bf-5815c6b7342c.png)
 
-The motor input initially does not start at a large value because of a misreading of the distance sensor. However once the distance sensor updates correctly the PWM signal is large. and then decreases linearly until it goes past zero because of overshoot. The negative PWM value in this case represents going forwards while the positve PWM values represent going backwards. 
+The motor input initially does not start at a large value because of a misreading of the distance sensor. However once the distance sensor updates correctly the PWM signal is large. and then decreases linearly until it goes past zero because of overshoot. The negative PWM value in this case represents going forwards while the positve PWM values represent going backwards. This value doesn't include the 40 PWM that is added to avoid deadband because of the way the value was implemented. Adding the deadband PWM depends on the direction the motor is spinning so adding 40 to the contorl signal can have the effect of making the motor move the wrong way.
 

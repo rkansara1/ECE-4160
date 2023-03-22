@@ -12,4 +12,7 @@ title: Labs
 
 [Lab 5: Motor Driver & Open Loop Controller](/ECE-4160/labs/lab5/writeup) 
 
+[Lab 6: Closed-loop Control (PID)](/ECE-4160/labs/lab6/writeup) 
+
+
 [About me](/ECE-4160/about)

@@ -41,4 +41,6 @@ Results:
 <video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
 
+![Y step response with video](https://user-images.githubusercontent.com/123790450/226801563-a1c739c8-3246-4642-be25-4f4b32f96241.png)
 
+![motor input with video](https://user-images.githubusercontent.com/123790450/226801585-2347b1e5-9be4-4b78-a91b-f6ed06ba1458.png)

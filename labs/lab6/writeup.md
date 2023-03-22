@@ -38,8 +38,7 @@ while (!distanceSensor2.checkForDataReady()) {
 Results:
 
 
-<video>
-https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov
+<video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
 
 

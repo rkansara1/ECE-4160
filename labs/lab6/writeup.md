@@ -41,6 +41,11 @@ Results:
 <video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
 
-![Y step response with video](https://user-images.githubusercontent.com/123790450/226801563-a1c739c8-3246-4642-be25-4f4b32f96241.png)
+![y step response trial 3](https://user-images.githubusercontent.com/123790450/226803500-243590a7-03e0-4114-8d13-c89e15968923.png)
 
-![motor input with video](https://user-images.githubusercontent.com/123790450/226801585-2347b1e5-9be4-4b78-a91b-f6ed06ba1458.png)
+This graph shows the step response of the ouput to a step change in input of 300 mm. The robot slightly overshoots the goal of 300 mm but corrects itself. This system is underdamped but still reaches steady state quickly with it only taking approximately 3.7 seconds.
+
+![motor pwm trial 3](https://user-images.githubusercontent.com/123790450/226803531-cf027858-f9c7-45e5-b0bf-5815c6b7342c.png)
+
+The motor input initially starts at a large value but decreases linearlly. The small bump that can be seen around 77.7 seconds is because the robot overshoots its goal and moves backwards. This graph is showing the absolute value of the the control signal.
+

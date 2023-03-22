@@ -20,6 +20,7 @@ while(true)
 Essentially the loop runs continuously and sends power to the motor with the help of a set of flags that can be changed from the python script. I modified the robot commands used in earlier commands to just change the flags to true or false depending on if I wanted the arrays to send back data or not.
 
 ## Lab Tasks
+---
 
 I initially started out with just a P controller to easily get something that could get close to the end result. I first examined the control loop. My reference value was approximately 300 mm. The distance sensor would measure up to a max value of 4000 mm. This meant my minimum error was 0 and my maximum possible error was -3700. Next I worked to find the control law. In this case the motor can be set to any value between [0 255]. However, because of the deadband of the motor which we examined in the last lab, a value up to 40 PWM does not cause any wheel rotation. So, I decided to have my minimum PWM be 40 and my max be 200. But to map my control U = Kp * E, onto those values, I mapped [0 3700] onto [0 160] and then added 40 to the result to have a U > 0 cause wheel rotation. I set my Kp = 160/3700 = 0.043. This meant my final control law was U = Kp * E + 40.
 
@@ -37,15 +38,14 @@ while (!distanceSensor2.checkForDataReady()) {
 
 Results:
 
-
 <video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
 
 ![y step response trial 3](https://user-images.githubusercontent.com/123790450/226803500-243590a7-03e0-4114-8d13-c89e15968923.png)
 
-This graph shows the step response of the ouput to a step change in input of 300 mm. The robot slightly overshoots the goal of 300 mm but corrects itself. This system is underdamped but still reaches steady state quickly with it only taking approximately 3.7 seconds.
+This graph shows the step response of the ouput to a step change in input of 300 mm. The robot slightly overshoots the goal of 300 mm but corrects itself. This system is underdamped but still reaches steady state quickly with it only taking approximately 3.7 seconds. There is some initial bug in the distance sensor reading but it quickly corrects itself and behaves normally.
 
 ![motor pwm trial 3](https://user-images.githubusercontent.com/123790450/226803531-cf027858-f9c7-45e5-b0bf-5815c6b7342c.png)
 
-The motor input initially starts at a large value but decreases linearlly. The small bump that can be seen around 77.7 seconds is because the robot overshoots its goal and moves backwards. This graph is showing the absolute value of the the control signal.
+The motor input initially does not start at a large value because of a misreading of the distance sensor. However once the distance sensor updates correctly the PWM signal is large. and then decreases linearly until it goes past zero because of overshoot. The negative PWM value in this case represents going forwards while the positve PWM values represent going backwards. 
 

@@ -40,8 +40,36 @@ sigma_3 = 5
 sig_u=np.array([[sigma_1**2,0],[0,sigma_2**2]])
 sig_z=np.array([[sigma_3**2]])
 ```
-My C matrix is different in this case because I am measuring my output as a positive distance from the wall which is why it is \[1 0] compared to the \[-1 0] seen in class.
+My C matrix is different in this case because I am measuring my output as a positive distance from the wall which is why it is \[1 0] compared to the \[-1 0] seen in class. I initially set my sigma_1 and sigma_2 relatively larger than my sigma_3 because I had more trust in my measurement then my model. Additionally I set my initial sigma matrix to have some confidence in the distance measurement and incredibly high confidence in the initial velocity state. This was because my robot was starting from rest so it almost certainly has an inital velocity of zero.
 
 ## Sanity Check
+Next I discretized my matrix by averaging my sampling time from my distance matrix, approximately 0.1 seconds, and used the provided kalman filter code to implement my kalman filter.
+
+``` python
+Ad = np.eye(2) + A*dt
+Bd = B * dt
+
+def kf(mu,sigma,u,y):
+    
+    mu_p = Ad.dot(mu) + Bd.dot(u) 
+    sigma_p = Ad.dot(sigma.dot(Ad.transpose())) + sig_u
+    
+    sigma_m = C.dot(sigma_p.dot(C.transpose())) + sig_z
+    kkf_gain = sigma_p.dot(C.transpose().dot(np.linalg.inv(sigma_m)))
+
+    y_m = y-C.dot(mu_p)
+    mu = mu_p + kkf_gain.dot(y_m)    
+    sigma=(np.eye(2)-kkf_gain.dot(C)).dot(sigma_p)
+
+    return mu,sigma
+
+kf_state = []
+kf_state.append(D2[0])
+
+for i in range(len(D2)-1):
+    X, sigma = kf(X,sigma,Input[i]/100,D2[i])
+    kf_state.append(X[0,:])
+
+```
 
 ## Extrapolation

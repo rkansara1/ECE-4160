@@ -14,5 +14,7 @@ title: Labs
 
 [Lab 6: Closed-loop Control (PID)](/ECE-4160/labs/lab6/writeup) 
 
+[Lab 7: Kalman Filter](/ECE-4160/labs/lab7/writeup) 
+
 
 [About me](/ECE-4160/about)

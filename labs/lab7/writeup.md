@@ -81,7 +81,7 @@ I also tested the kalman filter with similar covariance matrices and different c
 
 ![image](https://user-images.githubusercontent.com/123790450/228415289-19301833-6af9-4435-af92-e20f80381715.png)
 
-These different cases 
+These different cases show how adjusting the covariance matrix can change the way the kalman filter works. This makes sense because the covariance matrices represent how much trust you have in either you dynamic model or your sensor measurement. In this case having a filter with a lower measurement covariance matrix ended up having the filter track the data better. Having similar covaraince matrices also gave a kalman filte that tracked the value of the sensor well. Finally, having a filter that didn't trust the measurement value led to a kalman filter that went the opposite way of the initial sensor data. However after some time it began to folow the data.
 
 
 

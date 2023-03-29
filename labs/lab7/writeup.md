@@ -81,9 +81,30 @@ I also tested the kalman filter with similar covariance matrices and different c
 
 ![image](https://user-images.githubusercontent.com/123790450/228415289-19301833-6af9-4435-af92-e20f80381715.png)
 
-These different cases show how adjusting the covariance matrix can change the way the kalman filter works. This makes sense because the covariance matrices represent how much trust you have in either you dynamic model or your sensor measurement. In this case having a filter with a lower measurement covariance matrix ended up having the filter track the data better. Having similar covaraince matrices also gave a kalman filte that tracked the value of the sensor well. Finally, having a filter that didn't trust the measurement value led to a kalman filter that went the opposite way of the initial sensor data. However after some time it began to folow the data.
-
-
-
+These different cases show how adjusting the covariance matrix can change the way the kalman filter works. This makes sense because the covariance matrices represent how much trust you have in either you dynamic model or your sensor measurement. In this case having a filter with a lower measurement covariance matrix ended up having the filter track the data better. Having similar covaraince matrices also gave a kalman filte that tracked the value of the sensor well. Finally, having a filter that didn't trust the measurement value led to a kalman filter that went the opposite way of the initial sensor data. However after some time it began to folow the data. Based on my observations of the robot as well as previous ToF sensor testing, the first set of covariance matrices best represents the system.
 
 ## Extrapolation
+
+Now, I tried to extrapolate velocity data to predict the state inbetween sensor measurements. A short snippet of the code that does this is here:
+```c++
+if (distanceSensor2.checkForDataReady()) {
+    D2_sensor = distanceSensor2.getDistance();
+    distanceSensor2.clearInterrupt();
+    distanceSensor2.stopRanging();
+    usedSensor = true;
+    V = (D2_sensor - pm) / (t - pt);
+    pt = t;
+    pm = D2_sensor;
+  } else {
+    D2_pred = V * (millis() - pt) + D2_sensor;
+    usedSensor = false;
+  }
+```
+Here are the results of implementing this:
+
+<video src = "https://user-images.githubusercontent.com/123790450/228416431-6141e1a9-ec61-438e-a03a-77839deea263.MOV" controls = controls style="max-width:730px;"></video>
+
+![extrapolation comparison](https://user-images.githubusercontent.com/123790450/228416262-c47fd9e6-c066-4cfc-b443-d68570ef18c8.png)
+
+As we can see here, I was successfully able to extrapolate velocity data to predict the state quicker than just using sensor data.
+

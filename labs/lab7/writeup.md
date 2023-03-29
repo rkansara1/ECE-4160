@@ -71,5 +71,19 @@ for i in range(len(D2)-1):
     kf_state.append(X[0,:])
 
 ```
+My Input has to be divided by 100 because my step size was actually 100 pwm. Next using values from a PID test from the previous lab I was able to see how my kalman filter worked.
+
+![image](https://user-images.githubusercontent.com/123790450/228415118-ae2ab4db-e403-44f2-87b6-63b3896c294a.png).
+
+I also tested the kalman filter with similar covariance matrices and different covariance matrices.
+
+![image](https://user-images.githubusercontent.com/123790450/228415218-5a3709a1-70df-4c3b-b92f-b54af6635443.png)
+
+![image](https://user-images.githubusercontent.com/123790450/228415289-19301833-6af9-4435-af92-e20f80381715.png)
+
+These different cases 
+
+
+
 
 ## Extrapolation

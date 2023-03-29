@@ -106,5 +106,5 @@ Here are the results of implementing this:
 
 ![extrapolation comparison](https://user-images.githubusercontent.com/123790450/228416262-c47fd9e6-c066-4cfc-b443-d68570ef18c8.png)
 
-As we can see here, I was successfully able to extrapolate velocity data to predict the state quicker than just using sensor data.
+As we can see here, I was successfully able to extrapolate velocity data to predict the state while the ToF sensor isn't ready for data. However, what I noticed is that in this program the ToF sensor only provides data three times. When looking at the sensor ouptut from Lab 6, I received many more datapoints from the sensor, so I believe extrapolating data might not be the ideal way to perform a stunt quickly.
 

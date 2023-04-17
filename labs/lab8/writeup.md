@@ -24,5 +24,6 @@ Something to note here, as you can see the distance graph stops at 900 mm. This 
 
 ### Trial 3
 <iframe width="399" height="710" src="https://www.youtube.com/embed/p8zhkRKGQcQ" title="ECE 4160 Lab 8 Trial 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ![trial 3 distance](https://user-images.githubusercontent.com/123790450/232375270-3cc66a1d-fca1-492c-b6f9-9f6df20f91e6.png)
 ![trial 3 motor](https://user-images.githubusercontent.com/123790450/232375273-0e4fa13e-533f-4bf9-876e-86068c74f7c7.png)

@@ -17,6 +17,6 @@ In this lab I set out to achieve Task A. To peform Task A the robot needs to dri
 Something to note here, as you can see the distance graph stops at 900 mm. This is because in the above code the sensor collection stops once the robot reaches the stopping distance to the wall and then it just executes the flip. If sensor collection was occuring the robot would sense 4000 mm because there are no obstacles in front of it. Additionally the motor input after the stopping distance is the motor inputs used in the commands.
 
 ### Trial 2
-<iframe width="560" height="315" src="https://youtube.com/shorts/lrdXg8zvJ9I?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/shorts/lrdXg8zvJ9I?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Trial 3

@@ -16,5 +16,7 @@ title: Labs
 
 [Lab 7: Kalman Filter](/ECE-4160/labs/lab7/writeup) 
 
+[Lab 8: Stunts](/ECE-4160/labs/lab8/writeup)
+
 
 [About me](/ECE-4160/about)

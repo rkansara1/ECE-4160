@@ -18,5 +18,6 @@ title: Labs
 
 [Lab 8: Stunts](/ECE-4160/labs/lab8/writeup)
 
+[Lab 9: Mapping](/ECE-4160/labs/lab9/writeup)
 
 [About me](/ECE-4160/about)

@@ -1,5 +1,6 @@
 ---
 title: Labs
+layout: home
 ---
 
 [Lab 1: Artemis](/ECE-4160/labs/lab1/writeup)

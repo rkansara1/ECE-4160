@@ -1,8 +1,7 @@
 theme: minima
 title: ECE 4160 Fast Robots Lab Notebook
-author: 
-  name: Rishi Kansara
-  email: rkk58@cornell.edu
+name: Rishi Kansara
+email: rkk58@cornell.edu
 description: Lab Notebook for Fast Robots
 permalink: none
 header_pages:

@@ -1,7 +1,6 @@
 ---
 title: "Lab 9: Mapping"
 layout: page
-usemathjax: true
 ---
 
 ### Goal

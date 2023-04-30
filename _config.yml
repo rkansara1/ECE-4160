@@ -4,6 +4,8 @@ author: Rishi Kansara
 email: rkk58@cornell.edu
 description: Lab Notebook for Fast Robots
 permalink: none
+# Build Settings
+markdown: kramdown
 header_pages:
   - about-me.md
   - Lab-9:-Mapping.md

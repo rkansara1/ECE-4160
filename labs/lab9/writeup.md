@@ -7,6 +7,8 @@ layout: page
 
 In this lab I was tasked with mapping out a static room. This static room will be used in future labs, so obtaining a quality mapping of it will help with future efforts.
 
+![room](room.jpg)
+
 ### Control
 
 To map out the room, my robot needs to be able to rotate at either a constant rate or to constant positions. I chose to design an closed loop controller for the former. To measure the angle of rotation, in this case yaw, I needed to use the IMU. Luckily in [Lab 4](/ECE-4160/labs/lab4/writeup), I developed a method to use the IMU and get the yaw of the car.
@@ -69,5 +71,10 @@ At each point I ran the orientation control loop. Here are the results of mappin
 | P3 (5,3)     | ![](P3_Polar.png) | ![](P3_Cartesian.png) |
 | P4 (5,-3)    | ![](P4_Polar.png) | ![](P4_Cartesian.png) |
 
-To translate from polar coordinates I just used a simple polar to cartesian relation. $$ x = r * cos(\theta) $$
- <!-- \newline y=r*sin(\theta) $$ -->
+To translate from polar coordinates I just used a simple polar to cartesian relation. $$ x = r * cos(\theta) \newline y=r*sin(\theta) $$. Using a more complicated rotation matrix was not necessary because the robot starts at each position with the exact same orientation.
+
+I then combined the outputs to receive this mapping:
+
+![](combined_map.png)
+
+Using the map I overlaid lines over it to signify the walls. I slightly corrected curves and diagonal lines because I know the walls are not crooked and are orthogonal with each other.

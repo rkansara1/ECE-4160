@@ -1,5 +1,6 @@
 ---
 permalink: /about/
+title: About me
 ---
 
 ## Rishi Kansara, rkk58

@@ -97,3 +97,13 @@ I then combined the outputs to receive this mapping:
 Using the map I overlaid lines over it to signify the walls. I slightly corrected curves and diagonal lines because I know the walls are not crooked and are orthogonal with each other.
 
 ![](map_walls.png)
+
+There are a few sources of error for this map overall:
+
+1) The orientation control was imprecise and didn't always lead to the exact angle. The robot drives with skid steering, because of friction with the floor the wheels aren't able to turn perfectly so the robot actually goes in a circle rather than rotating in place.
+
+2) The control law is a simple P controller. Due to time constraints I did not add an integrator or derivative term to my control law. This may not have made a huge difference because the car always was able to get within 2.5 degrees of the reference
+
+3) The robot was placed within the square tile but wasn't precisely placed at an exact coordinate. I placed the robot on the sticker that marked the location but it may have been more precise to line up a corner of the robot with a corner of a tile.
+
+4) I should have used both ToF sensors to obtain a higher quality map. This would give two different sides of the rotation. Or I could have placed both ToF sensors in the front to get more reliable distance values.

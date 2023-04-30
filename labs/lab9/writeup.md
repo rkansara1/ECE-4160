@@ -94,7 +94,7 @@ I then combined the outputs to receive this mapping:
 
 ![](combined_map.png)
 
-Using the map I overlaid lines over it to signify the walls. I slightly corrected curves and diagonal lines because I know the walls are not crooked and are orthogonal with each other.
+Using the map I overlaid lines over it to signify the walls. I slightly corrected curves and diagonal lines because I know the walls are not crooked and are orthogonal with each other. I also trusted the points from the measuring location that was closest. For example for the lower left corner, I trusted the blue P1 points more than the red origin points or the green P2 points because the P1 points were taken from a closer position.
 
 ![](map_walls.png)
 
@@ -107,3 +107,5 @@ There are a few sources of error for this map overall:
 3) The robot was placed within the square tile but wasn't precisely placed at an exact coordinate. I placed the robot on the sticker that marked the location but it may have been more precise to line up a corner of the robot with a corner of a tile.
 
 4) I should have used both ToF sensors to obtain a higher quality map. This would give two different sides of the rotation. Or I could have placed both ToF sensors in the front to get more reliable distance values.
+
+5) I could have incremented at smaller reference values. At the moment the robot goes [0,10,20,...,360], I could have done [0,5,10,...360]. The tradeoff here is the time it takes to map. More reference positions means more time to take measurements. Additionally I didn't have a high trust in the fidelity of the angle so I knew there was a limitation to the angle to which I could go to.

@@ -7,7 +7,7 @@ In this lab I was tasked with mapping out a static room. This static room will b
 
 ### Control
 
-To map out the room, my robot needs to be able to rotate at either a constant rate or to constant positions. I chose to design an closed loop controller for the former. To measure the angle of rotation, in this case yaw, I needed to use the IMU. Luckily in [Lab 4](/ECE-4160/labs/lab4/writeup.md), I developed a method to use the IMU and get the yaw of the car.
+To map out the room, my robot needs to be able to rotate at either a constant rate or to constant positions. I chose to design an closed loop controller for the former. To measure the angle of rotation, in this case yaw, I needed to use the IMU. Luckily in [Lab 4](/ECE-4160/labs/lab4/writeup), I developed a method to use the IMU and get the yaw of the car.
 
 The first initial problem with performing this type of control was sensor drift. Over time, the yaw angle slowly drifts even if the car remains still. This means given enough time the robot will believe it is at 180 degrees even if it hasn't moved. To fix this issue, I sampled the IMU over set time period, observed the drift, and then subtracted that value from the sensor output. This way the sensor drift would be accounted for. Here is the code I used to achieve this:
 
@@ -43,7 +43,7 @@ Running this block of code resulted in 11.15 degrees of drift over 40594 ms, giv
 
 `yaw_g = yaw_g + myICM.gyrZ() * dt + (IMU_Drift_Constant * dt);`
 
-Implementing the rest of the control loop was simple because it reused the same principals developed in [Lab 6](/ECE-4160/labs/lab6/writeup.md). Here is what the control loop looks like:
+Implementing the rest of the control loop was simple because it reused the same principals developed in [Lab 6](/ECE-4160/labs/lab6/writeup). Here is what the control loop looks like:
 
 <script src="https://gist.github.com/rkansara1/739f17305bda2feb67c97bfa1b7294ff.js"></script>
 

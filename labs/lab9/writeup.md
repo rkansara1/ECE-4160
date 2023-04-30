@@ -52,9 +52,19 @@ Implementing the rest of the control loop was simple because it reused the same 
 The robot rotates at 10 degree increments. After it reaches within 2.5 degrees of each ten degree increment it samples the ToF sensor 5 times into an array. After going through a full 360 degree rotation, the data is sent back to the computer.
 
 Here is a video of the robot successfully rotating:
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/vUQCTslon9o" title="ECE 4160 Lab 9 Rotation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vUQCTslon9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Mapping
 Next I mapped out the room with the given coordinates. Here are the measuring locations.
 ![image](measurement.png)
+
+At each point I ran the orientation control loop. Here are the results of mapping:
+|              | Polar             | Cartesian             |
+|--------------|-------------------|-----------------------|
+| Origin (0,0) | ![](P0_Polar.png) | ![](P0_Cartesian.png) |
+| P1 (-3,-2)   | ![](P1_Polar.png) | ![](P1_Cartesian.png) |
+| P2 (0,3)     | ![](P2_Polar.png) | ![](P2_Cartesian.png) |
+| P3 (5,3)     | ![](P3_Polar.png) | ![](P3_Cartesian.png) |
+| P4 (5,-3)    | ![](P4_Polar.png) | ![](P4_Cartesian.png) |
 

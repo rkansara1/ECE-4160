@@ -71,7 +71,7 @@ At each point I ran the orientation control loop. Here are the results of mappin
 | P3 (5,3)     | ![](P3_Polar.png) | ![](P3_Cartesian.png) |
 | P4 (5,-3)    | ![](P4_Polar.png) | ![](P4_Cartesian.png) |
 
-To translate from polar coordinates I just used a simple polar to cartesian relation. $$ x = r * cos(\theta) \newline y=r*sin(\theta) $$. Using a more complicated rotation matrix was not necessary because the robot starts at each position with the exact same orientation.
+To translate from polar coordinates I just used a simple polar to cartesian relation. $$x = r * cos(\theta)$$  $$y=r*sin(\theta)$$. Using a more complicated rotation matrix was not necessary because the robot starts at each position with the exact same orientation.
 
 I then combined the outputs to receive this mapping:
 

@@ -56,5 +56,5 @@ Here is a video of the robot successfully rotating:
 
 ### Mapping
 Next I mapped out the room with the given coordinates. Here are the measuring locations.
-![image](/ECE-4160/labs/lab9/measurement.png)
+![image](measurement.png)
 

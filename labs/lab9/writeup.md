@@ -53,3 +53,8 @@ The robot rotates at 10 degree increments. After it reaches within 2.5 degrees o
 
 Here is a video of the robot successfully rotating:
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/vUQCTslon9o" title="ECE 4160 Lab 9 Rotation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Mapping
+Next I mapped out the room with the given coordinates. Here are the measuring locations.
+![image](/ECE-4160/labs/lab9/measurement.png)
+

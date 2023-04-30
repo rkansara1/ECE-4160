@@ -60,6 +60,7 @@ Next I mapped out the room with the given coordinates. Here are the measuring lo
 ![image](measurement.png)
 
 At each point I ran the orientation control loop. Here are the results of mapping:
+
 |              | Polar             | Cartesian             |
 |--------------|-------------------|-----------------------|
 | Origin (0,0) | ![](P0_Polar.png) | ![](P0_Cartesian.png) |

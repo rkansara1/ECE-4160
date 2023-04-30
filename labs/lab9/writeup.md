@@ -3,6 +3,8 @@ title: "Lab 9: Mapping"
 layout: page
 ---
 
+### Goal
+
 In this lab I was tasked with mapping out a static room. This static room will be used in future labs, so obtaining a quality mapping of it will help with future efforts.
 
 ### Control
@@ -48,3 +50,6 @@ Implementing the rest of the control loop was simple because it reused the same 
 <script src="https://gist.github.com/rkansara1/739f17305bda2feb67c97bfa1b7294ff.js"></script>
 
 The robot rotates at 10 degree increments. After it reaches within 2.5 degrees of each ten degree increment it samples the ToF sensor 5 times into an array. After going through a full 360 degree rotation, the data is sent back to the computer.
+
+Here is a video of the robot successfully rotating:
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/vUQCTslon9o" title="ECE 4160 Lab 9 Rotation Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

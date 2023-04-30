@@ -95,3 +95,5 @@ I then combined the outputs to receive this mapping:
 ![](combined_map.png)
 
 Using the map I overlaid lines over it to signify the walls. I slightly corrected curves and diagonal lines because I know the walls are not crooked and are orthogonal with each other.
+
+![](map_walls.png)

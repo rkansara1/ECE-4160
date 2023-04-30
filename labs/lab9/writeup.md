@@ -71,7 +71,24 @@ At each point I ran the orientation control loop. Here are the results of mappin
 | P3 (5,3)     | ![](P3_Polar.png) | ![](P3_Cartesian.png) |
 | P4 (5,-3)    | ![](P4_Polar.png) | ![](P4_Cartesian.png) |
 
-To translate from polar coordinates I just used a simple polar to cartesian relation. $$x = r * cos(\theta)$$  $$y=r*sin(\theta)$$. Using a more complicated rotation matrix was not necessary because the robot starts at each position with the exact same orientation.
+To translate from polar coordinates I just used a simple polar to cartesian relation. 
+$$x = r * cos(\theta)$$
+$$y=r*sin(\theta)$$
+
+Here is my processing code:
+```python
+with open ("origin_Dist.pkl",'rb') as file:
+    Dist_Origin = pickle.load(file)
+with open ("origin_Yaw.pkl",'rb') as file:
+    Theta_Origin = pickle.load(file)
+Dist_Origin = np.array(Dist_Origin[0:185])
+Theta_Origin = np.array(Theta_Origin[0:185])
+Dist_Origin = np.array(Dist_Origin)/304 # Convert from mm to ft
+Theta_Origin = np.deg2rad(Theta_Origin) # Convert from degrees to radians
+```
+
+
+Using a more complicated rotation matrix was not necessary because the robot starts at each position with the exact same orientation.
 
 I then combined the outputs to receive this mapping:
 

@@ -123,3 +123,7 @@ The bayes filter model is superior to the odometry model. This can be expected b
 Here is a video of the simulation:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ljI-Bj6B5kI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+## References
+I heavily referenced [Anya's page](https://anyafp.github.io/ece4960/labs/lab11/) from last year to better understand the simulation.

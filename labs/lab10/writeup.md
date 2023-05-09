@@ -56,7 +56,7 @@ def odom_motion_model(cur_pose, prev_pose, u):
 
 ### Prediction Step
 
-The next function performs the prediction step for the bayes filter
+The next function performs the prediction step for the bayes filter. In this step we are updating the belief based on the odometry data.
 
 ```python
 def prediction_step(cur_odom, prev_odom):
@@ -83,3 +83,43 @@ def prediction_step(cur_odom, prev_odom):
     sum_val = np.sum(temp)
     loc.bel_bar = np.true_divide( temp, sum_val )
 ```
+
+### Sensor Model
+In this step we calculate the probability that we have a certain sensor reading given our robot pose.
+
+```python
+def sensor_model(obs):
+    prob_array = []
+    for i in range(18):
+        prob_array.append( loc.gaussian( loc.obs_range_data[i], obs[i], loc.sensor_sigma ) )
+    return prob_array
+```
+
+### Update Step
+Now with the sensor conditional probability and the belief we can update the probabilities.
+
+```python
+def update_step():
+    for cx_cur in range(12):
+        for cy_cur in range(9):
+            for ca_cur in range(18):
+                bel_bar = loc.bel_bar[ cx_cur, cy_cur, ca_cur ]
+                p = sensor_model( mapper.get_views( cx_cur, cy_cur, ca_cur ) )
+                p_mul = np.prod(p) 
+                loc.bel[ cx_cur, cy_cur, ca_cur ] = p_mul * bel_bar
+    # Normalize
+    sum_val = np.sum(loc.bel)
+    loc.bel = np.true_divide( loc.bel, sum_val )
+```
+
+## Results
+
+I next ran the full simulation and compared the ground truth (Green), odometry model (Red), and Bayes filter (Blue):
+
+![comparison](odo_vs_bayes.png)
+
+The bayes filter model is superior to the odometry model. This can be expected because errors quickly accumulate in the odometry model. What is interesting to see is that the bayes filter is able to get better given additional data and becomes very close at tracking the actual ground truth.
+
+Here is a video of the simulation:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ljI-Bj6B5kI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

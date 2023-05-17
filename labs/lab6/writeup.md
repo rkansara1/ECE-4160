@@ -43,6 +43,10 @@ Results:
 
 <video src = "https://user-images.githubusercontent.com/123790450/226801282-d7b63d24-c471-4f30-b238-2b82d8a8940d.mov" controls = controls style="max-width:730px;"></video>
 
+**UPDATE**
+I was told the video was not working, so here is an uploaded copy of the above video on youtube.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CiIaTM7zUOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Based on the video the robot is able to complete the task successfully. It look like it gets within a half inch (~13 mm) of the goal.
 
 

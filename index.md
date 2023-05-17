@@ -23,5 +23,6 @@ layout: home
 
 [Lab 10: Bayes Filter](/ECE-4160/labs/lab10/writeup)
 
+[Lab 11: Localization](/ECE-4160/labs/lab11/writeup)
 
 [About me](/ECE-4160/about)

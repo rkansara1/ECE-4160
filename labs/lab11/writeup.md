@@ -42,9 +42,11 @@ ble.start_notify(ble.uuid["RX_STRING"],string_notification)
 Here are the results of running the localization at the four marked points in lab. The points in lab are measured in feet but everything is converted into meters for the simulation. ![](5,-3 round 2.png)
 
 
-|            | Simulation        | Polar                 | Belief            |
-|------------|-------------------|-----------------------|-------------------|
-| P1 (-3,-2) | ![](P1_Polar.png) | ![](P1_Cartesian.png) |                   |
-| P2 (0,3)   | ![](P2_Polar.png) | ![](P2_Cartesian.png) |                   |
-| P3 (5,3)   | ![](P3_Sim.png)   | ![](P3_Polar.png)     | (1.829,0.610,10)  |
-| P4 (5,-3)  | ![](P4_Sim.png)   | ![](P4_Polar.png)     | (1.829,-1.219,10) |
+|            | Simulation      | Polar             | Belief            |
+|------------|-----------------|-------------------|-------------------|
+| P1 (-3,-2) | ![](P1_Sim.png) | ![](P1_Polar.png) |                   |
+| P2 (0,3)   | ![](P2_Sim.png) | ![](P2_Polar.png) |                   |
+| P3 (5,3)   | ![](P3_Sim.png) | ![](P3_Polar.png) | (1.829,0.610,10)  |
+| P4 (5,-3)  | ![](P4_Sim.png) | ![](P4_Polar.png) | (1.829,-1.219,10) |
+
+The results show that Points P1,P3, and P4, had correct localizations. The results for P2 however show that it did not localize correctly. This was consistent across multiple trials. Poses 1 3 and 4 were easier to localize because there are no other places on the map with a similar mapping. For example for P3, there is no other location and orientation on the map where it is feasible that the robot could also be there.

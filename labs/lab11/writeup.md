@@ -39,14 +39,21 @@ ble.start_notify(ble.uuid["RX_STRING"],string_notification)
 
 # Localization Results
 
-Here are the results of running the localization at the four marked points in lab. The points in lab are measured in feet but everything is converted into meters for the simulation. ![](5,-3 round 2.png)
+Here are the results of running the localization at the four marked points in lab. The points in lab are measured in feet but everything is converted into meters for the simulation.
 
 
-|            | Simulation      | Polar             | Belief            |
-|------------|-----------------|-------------------|-------------------|
-| P1 (-3,-2) | ![](P1_Sim.png) | ![](P1_Polar.png) |                   |
-| P2 (0,3)   | ![](P2_Sim.png) | ![](P2_Polar.png) |                   |
-| P3 (5,3)   | ![](P3_Sim.png) | ![](P3_Polar.png) | (1.829,0.610,10)  |
-| P4 (5,-3)  | ![](P4_Sim.png) | ![](P4_Polar.png) | (1.829,-1.219,10) |
 
-The results show that Points P1,P3, and P4, had correct localizations. The results for P2 however show that it did not localize correctly. This was consistent across multiple trials. Poses 1 3 and 4 were easier to localize because there are no other places on the map with a similar mapping. For example for P3, there is no other location and orientation on the map where it is feasible that the robot could also be there.
+|            | Simulation      | Polar             | Belief                |
+|------------|-----------------|-------------------|-----------------------|
+| P1 (-3,-2) | ![](P1_Sim.png) | ![](P1_Polar.png) | (-0.914,-0.610,10.00) |
+| P2 (0,3)   | ![](P2_Sim.png) | ![](P2_Polar.png) | (0.000,0.914,10.00)   |
+| P3 (5,3)   | ![](P3_Sim.png) | ![](P3_Polar.png) | (1.829,0.610,10.00)   |
+| P4 (5,-3)  | ![](P4_Sim.png) | ![](P4_Polar.png) | (1.829,-1.219,10.00)  |
+
+Video Localizing around Point P2:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VWdVWnRg5Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+I was able to localize about each point. Something incredibly odd that occurred was the first day I attempted this, I was able to easily localize around points P3, and P4 with sufficient accuracy. The localized point was only off by a small radius. However, I was not able to localize about P1, or P2 at all. The model would pick a point far away. The next day I attempted to localize about P1 and P2 again and I instead got perfect localization results with the belief being the exact point as the ground truth. I do not know how or why the program became so accurate. The one major inaccuracy with each position was the heading it believed it was at. The heading is always supposed to end at 340 degrees because the program only rotates 17 times in 20 degree increments, however the believed heading was always 10 degrees. This difference is probably due to 

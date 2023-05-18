@@ -41,6 +41,7 @@ ble.start_notify(ble.uuid["RX_STRING"],string_notification)
 
 Here are the results of running the localization at the four marked points in lab. The points in lab are measured in feet but everything is converted into meters for the simulation. ![](5,-3 round 2.png)
 
+
 |            | Simulation        | Polar                 | Belief            |
 |------------|-------------------|-----------------------|-------------------|
 | P1 (-3,-2) | ![](P1_Polar.png) | ![](P1_Cartesian.png) |                   |

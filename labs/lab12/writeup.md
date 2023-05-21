@@ -52,10 +52,14 @@ After some testing, I came to the conclusion that my sensor for my yaw was too i
 
 ![trajectory](trajectory.jpg)
 
-An additional issue with the ToF sensors is that the were more accurate at sensing range when the wall was up close. To take advantage of this I would either move forwards or backwards depending on which wall was closer. From points 2 to 3 and 7 to 8 I move backwards. Additionally to compensate for the turns not being accurate, I only made 90 degree turns so that I wouldn't have to worry about getting the angle exactly perfect, because it was easier to make sure I could do a 90 degree turn well. Any other turn like a 180 degree or 270 was just a series of 90 degree turns. Additionally I took advantage of the `compute_control` function that was given to compute the distance between points.
+An additional issue with the ToF sensors is that the were more accurate at sensing range when the wall was up close. To take advantage of this I would either move forwards or backwards depending on which wall was closer. From points 2 to 3 and 7 to 8 I move backwards. Additionally to compensate for the turns not being accurate, I only made 90 degree turns so that I wouldn't have to worry about getting the angle exactly perfect, because it was easier to make sure I could do a 90 degree turn well. Any other turn like a 180 degree or 270 was just a series of 90 degree turns. Additionally I took advantage of the `compute_control` function that was given to compute the distance between points. All that was left was to execute the program. I had to make small changes to the gain in places where the robot was moving too quickly. Additionally, I had to change the location of some of the points to avoid obstacles a bit better. 
 
 <script src="https://gist.github.com/rkansara1/e5184637c6fd6203bcc3dad0de095676.js"></script>
 
 
+After multiple hours in the lab I was able to capture a successful run:
+
 # SUCCESSFUL RUN!
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q0lyhdeMGvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+If I could change anything, I would have created a PI controller for both position and orientation. The reason for this is that I could have made my proportional gain small to allow my sensor to update fast enough and then used my integral gain to get zero steady state error. By only having a P controller, I was guaranteed to have a steady state error that scaled with the size of my gain value. Increasing gain would decrease steady state error but making gain large also lead to the robot moving too quickly so it wouldn't be able to see the wall or it would overturn.

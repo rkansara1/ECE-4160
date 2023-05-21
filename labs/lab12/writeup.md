@@ -52,9 +52,9 @@ After some testing, I came to the conclusion that my sensor for my yaw was too i
 
 ![trajectory](trajectory.jpg)
 
+An additional issue with the ToF sensors is that the were more accurate at sensing range when the wall was up close. To take advantage of this I would either move forwards or backwards depending on which wall was closer. From points 2 to 3 and 7 to 8 I move backwards. Additionally to compensate for the turns not being accurate, I only made 90 degree turns so that I wouldn't have to worry about getting the angle exactly perfect, because it was easier to make sure I could do a 90 degree turn well. Any other turn like a 180 degree or 270 was just a series of 90 degree turns. Additionally I took advantage of the `compute_control` function that was given to compute the distance between points.
 
-
-
+<script src="https://gist.github.com/rkansara1/e5184637c6fd6203bcc3dad0de095676.js"></script>
 
 
 # SUCCESSFUL RUN!

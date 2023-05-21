@@ -25,4 +25,6 @@ layout: home
 
 [Lab 11: Localization](/ECE-4160/labs/lab11/writeup)
 
+[Lab 12: Path Planning and Execution](/ECE-4160/labs/lab12/writeup)
+
 [About me](/ECE-4160/about)
